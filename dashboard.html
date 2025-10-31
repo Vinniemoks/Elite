@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Dashboard - Kenya Unfiltered</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Kenya Unfiltered</h1>
+                </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="guides.html">Local Guides</a></li>
+                    <li><a href="experiences.html">Experiences</a></li>
+                    <li><a href="events.html">Events & Nightlife</a></li>
+                    <li><a href="cultural.html">Cultural Immersion</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <div class="user-menu">
+                    <img src="images/user-avatar.svg" alt="User Avatar" class="user-avatar">
+                    <span>Sarah Johnson</span>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="dropdown-menu">
+                        <a href="dashboard.html"><i class="fas fa-columns"></i> Dashboard</a>
+                        <a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <img src="images/user-avatar.svg" alt="User Avatar" class="sidebar-avatar">
+                <div class="sidebar-user-info">
+                    <h3>Sarah Johnson</h3>
+                    <p>Tourist</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="my-bookings.html"><i class="fas fa-calendar-check"></i> My Bookings</a></li>
+                    <li><a href="my-itinerary.html"><i class="fas fa-route"></i> My Itinerary</a></li>
+                    <li><a href="messages.html"><i class="fas fa-comments"></i> Messages</a></li>
+                    <li><a href="saved-experiences.html"><i class="fas fa-heart"></i> Saved Experiences</a></li>
+                    <li><a href="my-reviews.html"><i class="fas fa-star"></i> My Reviews</a></li>
+                    <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>Welcome back, Sarah!</h1>
+                <p>Your Kenyan adventure awaits</p>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>3</h3>
+                        <p>Upcoming Bookings</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>2</h3>
+                        <p>Guides Connected</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>4</h3>
+                        <p>Places to Visit</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>7</h3>
+                        <p>Saved Experiences</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="upcoming-bookings">
+                <div class="section-header">
+                    <h2>Upcoming Bookings</h2>
+                    <a href="my-bookings.html" class="view-all">View All</a>
+                </div>
+                <div class="bookings-grid">
+                    <div class="booking-card">
+                        <div class="booking-img">
+                            <img src="images/nairobi-night.svg" alt="Nairobi Nightlife">
+                        </div>
+                        <div class="booking-content">
+                            <h3>Nairobi After Dark</h3>
+                            <p class="booking-date"><i class="fas fa-calendar"></i> Tomorrow, 8:00 PM</p>
+                            <p class="booking-guide"><i class="fas fa-user"></i> Guide: James Omondi</p>
+                            <p class="booking-location"><i class="fas fa-map-marker-alt"></i> Meeting Point: Kenyatta Avenue</p>
+                            <div class="booking-actions">
+                                <a href="booking-details.html?id=1" class="btn btn-outline">View Details</a>
+                                <a href="#" class="btn btn-primary">Message Guide</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="booking-card">
+                        <div class="booking-img">
+                            <img src="images/local-cooking.svg" alt="Kenyan Cooking">
+                        </div>
+                        <div class="booking-content">
+                            <h3>Cook with a Kenyan Family</h3>
+                            <p class="booking-date"><i class="fas fa-calendar"></i> Friday, 11:00 AM</p>
+                            <p class="booking-guide"><i class="fas fa-user"></i> Guide: Amina Hassan</p>
+                            <p class="booking-location"><i class="fas fa-map-marker-alt"></i> Meeting Point: Kisumu Central Market</p>
+                            <div class="booking-actions">
+                                <a href="booking-details.html?id=2" class="btn btn-outline">View Details</a>
+                                <a href="#" class="btn btn-primary">Message Guide</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="booking-card">
+                        <div class="booking-img">
+                            <img src="images/hidden-waterfall.svg" alt="Hidden Waterfall">
+                        </div>
+                        <div class="booking-content">
+                            <h3>Secret Waterfalls Trek</h3>
+                            <p class="booking-date"><i class="fas fa-calendar"></i> Sunday, 9:00 AM</p>
+                            <p class="booking-guide"><i class="fas fa-user"></i> Guide: Daniel Kipchoge</p>
+                            <p class="booking-location"><i class="fas fa-map-marker-alt"></i> Meeting Point: Rift Valley Viewpoint</p>
+                            <div class="booking-actions">
+                                <a href="booking-details.html?id=3" class="btn btn-outline">View Details</a>
+                                <a href="#" class="btn btn-primary">Message Guide</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="my-itinerary">
+                <div class="section-header">
+                    <h2>My Itinerary</h2>
+                    <a href="my-itinerary.html" class="view-all">View Full Itinerary</a>
+                </div>
+                <div class="itinerary-timeline">
+                    <div class="timeline-day">
+                        <div class="day-header">
+                            <h3>Today</h3>
+                            <p>June 15, 2023</p>
+                        </div>
+                        <div class="timeline-items">
+                            <div class="timeline-item">
+                                <div class="timeline-time">10:00 AM</div>
+                                <div class="timeline-content">
+                                    <h4>Free Time</h4>
+                                    <p>Explore Nairobi on your own</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-time">2:00 PM</div>
+                                <div class="timeline-content">
+                                    <h4>Cultural Orientation</h4>
+                                    <p>Learn basic Swahili phrases and cultural etiquette</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-day">
+                        <div class="day-header">
+                            <h3>Tomorrow</h3>
+                            <p>June 16, 2023</p>
+                        </div>
+                        <div class="timeline-items">
+                            <div class="timeline-item">
+                                <div class="timeline-time">8:00 PM</div>
+                                <div class="timeline-content">
+                                    <h4>Nairobi After Dark</h4>
+                                    <p>Experience the vibrant nightlife of Nairobi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recommended-experiences">
+                <div class="section-header">
+                    <h2>Recommended For You</h2>
+                    <a href="experiences.html" class="view-all">View All</a>
+                </div>
+                <div class="recommendations-grid">
+                    <div class="experience-card">
+                        <div class="experience-img">
+                            <img src="images/local-market.svg" alt="Local Market Tour">
+                            <div class="experience-badge">Cultural Immersion</div>
+                        </div>
+                        <div class="experience-content">
+                            <h3>Maasai Market Shopping Experience</h3>
+                            <p class="experience-location"><i class="fas fa-map-marker-alt"></i> Nairobi</p>
+                            <div class="experience-footer">
+                                <div class="price">
+                                    <span class="amount">KSh 1,500</span>
+                                    <span class="per">per person</span>
+                                </div>
+                                <a href="experience-details.html?id=maasai-market" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-img">
+                            <img src="images/music-scene.svg" alt="Music Scene">
+                            <div class="experience-badge">Nightlife</div>
+                        </div>
+                        <div class="experience-content">
+                            <h3>Nairobi Live Music Tour</h3>
+                            <p class="experience-location"><i class="fas fa-map-marker-alt"></i> Nairobi</p>
+                            <div class="experience-footer">
+                                <div class="price">
+                                    <span class="amount">KSh 2,800</span>
+                                    <span class="per">per person</span>
+                                </div>
+                                <a href="experience-details.html?id=music-tour" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="messages-preview">
+                <div class="section-header">
+                    <h2>Recent Messages</h2>
+                    <a href="messages.html" class="view-all">View All</a>
+                </div>
+                <div class="messages-list">
+                    <div class="message-item">
+                        <img src="images/guide-1.svg" alt="James Omondi" class="message-avatar">
+                        <div class="message-content">
+                            <div class="message-header">
+                                <h4>James Omondi</h4>
+                                <span class="message-time">2 hours ago</span>
+                            </div>
+                            <p>Hello Sarah! I'm looking forward to our Nairobi nightlife tour tomorrow. Just wanted to confirm that we're still meeting at 8:00 PM at Kenyatta Avenue.</p>
+                        </div>
+                    </div>
+                    <div class="message-item">
+                        <img src="images/guide-2.svg" alt="Amina Hassan" class="message-avatar">
+                        <div class="message-content">
+                            <div class="message-header">
+                                <h4>Amina Hassan</h4>
+                                <span class="message-time">Yesterday</span>
+                            </div>
+                            <p>Hi Sarah, for our cooking class on Friday, do you have any food allergies I should be aware of? We'll be preparing traditional Kenyan dishes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Kenya Unfiltered</h3>
+                    <p>Connecting international tourists with authentic, unfiltered Kenyan experiences through local guides and cultural immersion.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="guides.html">Local Guides</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="events.html">Events & Nightlife</a></li>
+                        <li><a href="cultural.html">Cultural Immersion</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>For Guides</h3>
+                    <ul>
+                        <li><a href="become-guide.html">Become a Guide</a></li>
+                        <li><a href="guide-resources.html">Guide Resources</a></li>
+                        <li><a href="community.html">Community Forum</a></li>
+                        <li><a href="training.html">Training & Certification</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="safety.html">Safety Information</a></li>
+                        <li><a href="cancellation.html">Cancellation Options</a></li>
+                        <li><a href="covid.html">COVID-19 Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kenya Unfiltered. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="cookies.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

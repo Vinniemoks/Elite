@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard.html
+Disallow: /booking.html
+Disallow: /my-bookings.html
+Disallow: /my-itinerary.html
+Disallow: /messages.html
+Disallow: /profile.html
+Disallow: /settings.html
+
+Sitemap: https://kenyaunfiltered.com/sitemap.xml

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Experience - Kenya Unfiltered</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Kenya Unfiltered</h1>
+                </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="guides.html">Local Guides</a></li>
+                    <li><a href="experiences.html">Experiences</a></li>
+                    <li><a href="events.html">Events & Nightlife</a></li>
+                    <li><a href="cultural.html">Cultural Immersion</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <div class="user-menu">
+                    <img src="images/user-avatar.svg" alt="User Avatar" class="user-avatar">
+                    <span>Sarah Johnson</span>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="dropdown-menu">
+                        <a href="dashboard.html"><i class="fas fa-columns"></i> Dashboard</a>
+                        <a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="booking-container">
+        <div class="booking-header">
+            <div class="container">
+                <h1>Book Your Experience</h1>
+                <p>Secure your spot for an authentic Kenyan adventure</p>
+            </div>
+        </div>
+
+        <div class="booking-content container">
+            <div class="booking-summary">
+                <div class="experience-preview">
+                    <img src="images/nairobi-night.svg" alt="Nairobi Nightlife">
+                    <div class="experience-badge">Nightlife</div>
+                </div>
+                <div class="experience-details">
+                    <h2>Nairobi After Dark</h2>
+                    <p class="experience-location"><i class="fas fa-map-marker-alt"></i> Nairobi</p>
+                    <div class="guide-info">
+                        <img src="images/guide-1.svg" alt="James Omondi" class="guide-avatar">
+                        <div>
+                            <p class="guide-name">Guided by James Omondi</p>
+                            <div class="guide-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(32 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-description">
+                        <h3>About This Experience</h3>
+                        <p>Experience the vibrant nightlife of Nairobi with a local guide who knows the best spots. Visit hidden gems, popular clubs, and enjoy live music at local rates. This 5-hour tour includes entry to 3 venues, one welcome drink at each location, and insider access to the real Nairobi after dark.</p>
+                    </div>
+                    <div class="experience-highlights">
+                        <h3>Experience Highlights</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Visit 3 authentic local nightlife venues</li>
+                            <li><i class="fas fa-check"></i> Enjoy live music from local artists</li>
+                            <li><i class="fas fa-check"></i> Skip tourist prices with local rates</li>
+                            <li><i class="fas fa-check"></i> Learn about Nairobi's music and club culture</li>
+                            <li><i class="fas fa-check"></i> Meet locals and make new friends</li>
+                        </ul>
+                    </div>
+                    <div class="experience-includes">
+                        <h3>What's Included</h3>
+                        <div class="includes-grid">
+                            <div class="include-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Entry fees to all venues</span>
+                            </div>
+                            <div class="include-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>One welcome drink per venue</span>
+                            </div>
+                            <div class="include-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Local transportation between venues</span>
+                            </div>
+                            <div class="include-item">
+                                <i class="fas fa-times-circle"></i>
+                                <span>Additional food and drinks</span>
+                            </div>
+                            <div class="include-item">
+                                <i class="fas fa-times-circle"></i>
+                                <span>Transportation to/from your accommodation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-form">
+                <div class="form-card">
+                    <h3>Book Your Spot</h3>
+                    <form id="booking-form">
+                        <div class="form-group">
+                            <label for="date">Select Date</label>
+                            <input type="date" id="date" name="date" required min="2023-06-15">
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Available Times</label>
+                            <select id="time" name="time" required>
+                                <option value="">Select a time</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <div class="guest-counter">
+                                <button type="button" class="counter-btn minus-btn">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="number" id="guests" name="guests" value="1" min="1" max="6" readonly>
+                                <button type="button" class="counter-btn plus-btn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <p class="guest-limit">Maximum 6 guests</p>
+                        </div>
+                        <div class="price-breakdown">
+                            <div class="price-item">
+                                <span>KSh 2,500 x 1 guest</span>
+                                <span>KSh 2,500</span>
+                            </div>
+                            <div class="price-item">
+                                <span>Service fee</span>
+                                <span>KSh 250</span>
+                            </div>
+                            <div class="price-total">
+                                <span>Total</span>
+                                <span>KSh 2,750</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="special-requests">Special Requests (Optional)</label>
+                            <textarea id="special-requests" name="special-requests" rows="3" placeholder="Any dietary restrictions, accessibility needs, or other requests?"></textarea>
+                        </div>
+                        <div class="payment-options">
+                            <h4>Payment Options</h4>
+                            <div class="payment-methods">
+                                <div class="payment-method">
+                                    <input type="radio" id="mpesa" name="payment" value="mpesa" checked>
+                                    <label for="mpesa">M-Pesa</label>
+                                </div>
+                                <div class="payment-method">
+                                    <input type="radio" id="card" name="payment" value="card">
+                                    <label for="card">Credit/Debit Card</label>
+                                </div>
+                                <div class="payment-method">
+                                    <input type="radio" id="paypal" name="payment" value="paypal">
+                                    <label for="paypal">PayPal</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Confirm and Pay</button>
+                    </form>
+                    <div class="booking-policies">
+                        <p><i class="fas fa-shield-alt"></i> <strong>Secure Booking:</strong> Your payment information is encrypted and secure.</p>
+                        <p><i class="fas fa-calendar-times"></i> <strong>Cancellation Policy:</strong> Free cancellation up to 24 hours before the experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Kenya Unfiltered</h3>
+                    <p>Connecting international tourists with authentic, unfiltered Kenyan experiences through local guides and cultural immersion.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="guides.html">Local Guides</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="events.html">Events & Nightlife</a></li>
+                        <li><a href="cultural.html">Cultural Immersion</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>For Guides</h3>
+                    <ul>
+                        <li><a href="become-guide.html">Become a Guide</a></li>
+                        <li><a href="guide-resources.html">Guide Resources</a></li>
+                        <li><a href="community.html">Community Forum</a></li>
+                        <li><a href="training.html">Training & Certification</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="safety.html">Safety Information</a></li>
+                        <li><a href="cancellation.html">Cancellation Options</a></li>
+                        <li><a href="covid.html">COVID-19 Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kenya Unfiltered. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="cookies.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>
