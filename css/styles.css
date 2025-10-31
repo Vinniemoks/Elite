@@ -760,27 +760,79 @@ footer {
 /* Enha
 nced Interactive Styles */
 
+/* Logo and Tagline */
+.logo a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo h1 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.logo .tagline {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #666;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Section Header with Currency Toggle */
+.section-header-with-currency {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.section-header-with-currency .section-title {
+    margin-bottom: 0;
+}
+
 /* Currency Toggle Button */
 .currency-toggle {
     background: transparent;
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 25px;
     cursor: pointer;
     font-weight: 600;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    margin-right: 1rem;
+    white-space: nowrap;
 }
 
 .currency-toggle:hover {
     background: var(--primary-color);
     color: white;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.3);
 }
 
 .currency-toggle i {
-    margin-right: 0.3rem;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .section-header-with-currency {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .currency-toggle {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .logo .tagline {
+        font-size: 0.65rem;
+    }
 }
 
 /* Enhanced Mobile Menu */

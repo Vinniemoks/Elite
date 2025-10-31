@@ -99,32 +99,38 @@ function initializeSmoothScrolling() {
 
 // Currency Toggle Functionality (USD/KES)
 function initializeCurrencyToggle() {
-    // Create currency toggle button if not exists
-    const authButtons = document.querySelector('.auth-buttons');
-    if (authButtons && !document.querySelector('.currency-toggle')) {
-        const currencyToggle = document.createElement('button');
-        currencyToggle.className = 'currency-toggle';
-        currencyToggle.innerHTML = '<i class="fas fa-dollar-sign"></i> USD';
-        currencyToggle.setAttribute('aria-label', 'Toggle currency');
-        authButtons.insertBefore(currencyToggle, authButtons.firstChild);
-        
+    // Find the currency toggle button (now in experiences section)
+    const currencyToggle = document.getElementById('currency-toggle-btn');
+    
+    if (currencyToggle) {
         currencyToggle.addEventListener('click', toggleCurrency);
+    }
+    
+    // Load saved currency preference
+    const savedCurrency = localStorage.getItem('preferredCurrency');
+    if (savedCurrency) {
+        currentCurrency = savedCurrency;
+        updateCurrencyButton();
     }
     
     // Initialize prices on page load
     updateAllPrices();
 }
 
-function toggleCurrency() {
-    currentCurrency = currentCurrency === 'USD' ? 'KES' : 'USD';
-    const toggleBtn = document.querySelector('.currency-toggle');
+function updateCurrencyButton() {
+    const toggleBtn = document.getElementById('currency-toggle-btn');
+    if (!toggleBtn) return;
     
     if (currentCurrency === 'USD') {
         toggleBtn.innerHTML = '<i class="fas fa-dollar-sign"></i> USD';
     } else {
         toggleBtn.innerHTML = 'KES';
     }
-    
+}
+
+function toggleCurrency() {
+    currentCurrency = currentCurrency === 'USD' ? 'KES' : 'USD';
+    updateCurrencyButton();
     updateAllPrices();
     
     // Save preference to localStorage
