@@ -106,6 +106,52 @@ app.post('/api/guides/apply', upload.fields([
   }
 });
 
+// List applications (basic admin endpoint)
+app.get('/api/guides/applications', (req, res) => {
+  try {
+    const dir = path.join(__dirname, 'applications');
+    ensureDir(dir);
+    const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
+    const items = files.map(f => {
+      const full = path.join(dir, f);
+      try {
+        const j = JSON.parse(fs.readFileSync(full, 'utf8'));
+        return {
+          id: f,
+          submittedAt: j.submittedAt,
+          fullName: j.fullName,
+          email: j.email,
+          location: j.location || null,
+          experienceYears: j.experienceYears || null,
+          resume: j.files?.resume || null,
+          video: j.files?.video || null,
+        };
+      } catch (e) {
+        return { id: f, error: 'Invalid JSON' };
+      }
+    }).sort((a, b) => String(b.submittedAt || '').localeCompare(String(a.submittedAt || '')));
+    res.json({ count: items.length, items });
+  } catch (err) {
+    console.error('List applications error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Get single application
+app.get('/api/guides/applications/:id', (req, res) => {
+  try {
+    const id = req.params.id;
+    if (!id || id.includes('..')) return res.status(400).json({ error: 'Invalid id' });
+    const filePath = path.join(__dirname, 'applications', id);
+    if (!fs.existsSync(filePath)) return res.status(404).json({ error: 'Not found' });
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    res.json(data);
+  } catch (err) {
+    console.error('Get application error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Guide application API listening on http://localhost:${PORT}`);
 });
