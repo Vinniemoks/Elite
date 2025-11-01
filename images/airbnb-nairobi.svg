@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f8f8f8"/>
+  
+  <!-- Modern apartment building -->
+  <rect x="50" y="50" width="300" height="200" fill="#ffffff" stroke="#e0e0e0" stroke-width="2"/>
+  
+  <!-- Windows -->
+  <rect x="80" y="80" width="40" height="30" fill="#e8f4f8" stroke="#d0d0d0" stroke-width="1"/>
+  <rect x="140" y="80" width="40" height="30" fill="#e8f4f8" stroke="#d0d0d0" stroke-width="1"/>
+  <rect x="200" y="80" width="40" height="30" fill="#e8f4f8" stroke="#d0d0d0" stroke-width="1"/>
+  <rect x="260" y="80" width="40" height="30" fill="#e8f4f8" stroke="#d0d0d0" stroke-width="1"/>
+  
+  <rect x="80" y="130" width="40" height="30" fill="#e8f4f8" stroke="#d0d0d0" stroke-width="1"/>
+  <rect x="140" y="130" width="40" height="30" fill="#e8f4f8" stroke="#d0d0d0" stroke-width="1"/>
+  <rect x="200" y="130" width="40" height="30" fill="#e8f4f8" stroke="#d0d0d0" stroke-width="1"/>
+  <rect x="260" y="130" width="40" height="30" fill="#e8f4f8" stroke="#d0d0d0" stroke-width="1"/>
+  
+  <rect x="80" y="180" width="40" height="30" fill="#e8f4f8" stroke="#d0d0d0" stroke-width="1"/>
+  <rect x="140" y="180" width="40" height="30" fill="#e8f4f8" stroke="#d0d0d0" stroke-width="1"/>
+  <rect x="200" y="180" width="40" height="30" fill="#e8f4f8" stroke="#d0d0d0" stroke-width="1"/>
+  
+  <!-- Door -->
+  <rect x="260" y="180" width="40" height="50" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1"/>
+  <circle cx="290" cy="205" r="3" fill="#404040"/>
+  
+  <!-- Balconies -->
+  <rect x="75" y="115" width="50" height="5" fill="#e0e0e0"/>
+  <rect x="135" y="115" width="50" height="5" fill="#e0e0e0"/>
+  <rect x="195" y="115" width="50" height="5" fill="#e0e0e0"/>
+  <rect x="255" y="115" width="50" height="5" fill="#e0e0e0"/>
+  
+  <rect x="75" y="165" width="50" height="5" fill="#e0e0e0"/>
+  <rect x="135" y="165" width="50" height="5" fill="#e0e0e0"/>
+  <rect x="195" y="165" width="50" height="5" fill="#e0e0e0"/>
+  <rect x="255" y="165" width="50" height="5" fill="#e0e0e0"/>
+  
+  <!-- Plants -->
+  <circle cx="85" cy="110" r="5" fill="#4CAF50"/>
+  <circle cx="145" cy="110" r="5" fill="#4CAF50"/>
+  <circle cx="205" cy="110" r="5" fill="#4CAF50"/>
+  <circle cx="265" cy="110" r="5" fill="#4CAF50"/>
+  
+  <!-- AirBnB logo -->
+  <circle cx="200" cy="30" r="15" fill="#FF5A5F"/>
+  
+  <!-- Title -->
+  <text x="200" y="270" font-family="Arial" font-size="18" fill="#333333" text-anchor="middle">Curated AirBnB Stays</text>
+  <text x="200" y="290" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">Handpicked accommodations for your budget</text>
+</svg>

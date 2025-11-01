@@ -1,0 +1,55 @@
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Node modules (if you add backend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Build files (if you add build process)
+dist/
+build/
+
+# Database files (for local development)
+*.sqlite
+*.db
+
+# Backup files
+*.bak
+*.backup
+
+# Sensitive information
+config/secrets.js
+config/production.js
+
+# User uploaded content (add this folder later)
+uploads/
+user-uploads/
+
+# Cache
+.cache/
+*.cache

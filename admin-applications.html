@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin – Guide Applications</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .admin-page { padding: 2rem 0; }
+    .admin-container { max-width: 1000px; margin: 0 auto; background: #fff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); padding: 1.5rem; }
+    .admin-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.75rem; border-bottom: 1px solid #eee; text-align: left; }
+    th { background: #fafafa; font-weight: 600; }
+    .actions { display:flex; gap:0.5rem; }
+    .tag { display:inline-block; padding:0.2rem 0.5rem; border:1px solid #ddd; border-radius:6px; font-size:0.8rem; }
+    .error { color: #b00020; margin: 1rem 0; }
+    
+    /* Login Modal Styles */
+    .login-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    
+    .login-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    .login-form h3 {
+      margin: 0 0 1.5rem 0;
+      text-align: center;
+    }
+    
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .btn-secondary {
+      background: #6c757d;
+      color: white;
+    }
+    
+    .btn-secondary:hover {
+      background: #5a6268;
+    }
+  </style>
+  <script>
+    window.GUIDE_API_URL = 'http://localhost:5003';
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <h1>Elite Events Kenya</h1>
+          <p class="tagline">Admin Panel</p>
+        </a>
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li><a href="guides.html">Local Guides</a></li>
+          <li><a href="become-guide.html">Become a Guide</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="admin-page">
+    <div class="admin-container">
+      <div class="admin-header">
+        <h1>Guide Applications</h1>
+        <button id="refreshBtn" class="btn btn-outline">Refresh</button>
+      </div>
+
+      <div id="loginModal" class="login-modal" style="display: none;">
+        <div class="login-form">
+          <h3>Admin Login</h3>
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Login</button>
+              <button type="button" id="cancelLogin" class="btn btn-secondary">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="errorBox" class="error" style="display:none; color:#b00020; margin-bottom:0.75rem;"></div>
+      <div class="table-responsive">
+        <table id="appsTable">
+          <thead>
+            <tr>
+              <th>Submitted</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Location</th>
+              <th>Resume</th>
+              <th>Video</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="7">Loading applications...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom" style="display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+        <p>&copy; 2025 Elite Events Kenya. Admin.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="cookies.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/admin-apps.js"></script>
+</body>
+</html>

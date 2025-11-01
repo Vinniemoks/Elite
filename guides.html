@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Guides - Kenya Unfiltered</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/guides.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Kenya Unfiltered</h1>
+                </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="guides.html" class="active">Local Guides</a></li>
+                    <li><a href="experiences.html">Experiences</a></li>
+                    <li><a href="events.html">Events & Nightlife</a></li>
+                    <li><a href="cultural.html">Cultural Immersion</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Meet Our Local Guides</h1>
+            <p>Connect with verified Kenyan guides who know their country inside out</p>
+        </div>
+    </section>
+
+    <section class="guide-filters">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="region">Region</label>
+                    <select id="region">
+                        <option value="">All Regions</option>
+                        <option value="nairobi">Nairobi & Central</option>
+                        <option value="coast">Coast & Mombasa</option>
+                        <option value="rift">Rift Valley</option>
+                        <option value="western">Western Kenya</option>
+                        <option value="eastern">Eastern Kenya</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="specialty">Specialty</label>
+                    <select id="specialty">
+                        <option value="">All Specialties</option>
+                        <option value="culture">Cultural Expert</option>
+                        <option value="adventure">Adventure Guide</option>
+                        <option value="food">Food & Culinary</option>
+                        <option value="wildlife">Wildlife & Nature</option>
+                        <option value="urban">Urban Explorer</option>
+                        <option value="photography">Photography</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="language">Language</label>
+                    <select id="language">
+                        <option value="">All Languages</option>
+                        <option value="english">English</option>
+                        <option value="swahili">Swahili</option>
+                        <option value="french">French</option>
+                        <option value="german">German</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="japanese">Japanese</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="rating">Min Rating</label>
+                    <select id="rating">
+                        <option value="">Any Rating</option>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4+ Stars</option>
+                        <option value="3">3+ Stars</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary filter-btn">Apply Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="guides-list">
+        <div class="container">
+            <div class="guides-grid">
+                <div class="guide-card">
+                    <div class="guide-img">
+                        <img src="images/guide-james.svg" alt="Guide James">
+                    </div>
+                    <div class="guide-content">
+                        <h3>James Omondi</h3>
+                        <p class="guide-location">Nairobi & Central Kenya</p>
+                        <div class="guide-specialties">
+                            <span>Urban Explorer</span>
+                            <span>Food Expert</span>
+                            <span>History</span>
+                        </div>
+                        <p class="guide-bio">Urban explorer, foodie, and history buff with 7 years of guiding experience. I'll show you the real Nairobi that tourists rarely see, from hidden food gems to vibrant local markets and the city's rich cultural history.</p>
+                        <div class="guide-meta">
+                            <span><i class="fas fa-star"></i> 4.9 (127 reviews)</span>
+                            <span><i class="fas fa-language"></i> English, Swahili</span>
+                        </div>
+                        <div class="guide-actions">
+                            <a href="guide-profile.html?id=james" class="btn btn-outline">View Profile</a>
+                            <a href="#" class="btn btn-primary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-img">
+                        <img src="images/guide-amina.svg" alt="Guide Amina">
+                    </div>
+                    <div class="guide-content">
+                        <h3>Amina Hassan</h3>
+                        <p class="guide-location">Mombasa & Coastal Region</p>
+                        <div class="guide-specialties">
+                            <span>Marine Life</span>
+                            <span>Cultural Expert</span>
+                            <span>Coastal Traditions</span>
+                        </div>
+                        <p class="guide-bio">Marine enthusiast, cultural expert, and passionate about coastal traditions. Born and raised in Mombasa, I can show you the authentic coastal life, from traditional Swahili cuisine to hidden beaches and local fishing communities.</p>
+                        <div class="guide-meta">
+                            <span><i class="fas fa-star"></i> 4.8 (93 reviews)</span>
+                            <span><i class="fas fa-language"></i> English, Swahili, Arabic</span>
+                        </div>
+                        <div class="guide-actions">
+                            <a href="guide-profile.html?id=amina" class="btn btn-outline">View Profile</a>
+                            <a href="#" class="btn btn-primary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-img">
+                        <img src="images/guide-daniel.svg" alt="Guide Daniel">
+                    </div>
+                    <div class="guide-content">
+                        <h3>Daniel Kipchoge</h3>
+                        <p class="guide-location">Rift Valley & Western Kenya</p>
+                        <div class="guide-specialties">
+                            <span>Adventure</span>
+                            <span>Wildlife</span>
+                            <span>Conservation</span>
+                        </div>
+                        <p class="guide-bio">Adventure specialist, wildlife expert, and community conservation advocate. I grew up in the Rift Valley and know every hidden waterfall, hiking trail, and wildlife hotspot. I focus on sustainable tourism that benefits local communities.</p>
+                        <div class="guide-meta">
+                            <span><i class="fas fa-star"></i> 5.0 (78 reviews)</span>
+                            <span><i class="fas fa-language"></i> English, Swahili, Kalenjin</span>
+                        </div>
+                        <div class="guide-actions">
+                            <a href="guide-profile.html?id=daniel" class="btn btn-outline">View Profile</a>
+                            <a href="#" class="btn btn-primary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-img">
+                        <img src="images/guide-wanjiku.svg" alt="Guide Wanjiku">
+                    </div>
+                    <div class="guide-content">
+                        <h3>Wanjiku Muthoni</h3>
+                        <p class="guide-location">Central Kenya & Mt. Kenya</p>
+                        <div class="guide-specialties">
+                            <span>Hiking</span>
+                            <span>Photography</span>
+                            <span>Local Crafts</span>
+                        </div>
+                        <p class="guide-bio">Hiking enthusiast, photographer, and craft lover. I specialize in Mt. Kenya treks and connecting visitors with local artisans. My tours combine outdoor adventure with authentic cultural experiences in rural Kenyan communities.</p>
+                        <div class="guide-meta">
+                            <span><i class="fas fa-star"></i> 4.7 (62 reviews)</span>
+                            <span><i class="fas fa-language"></i> English, Swahili, Kikuyu</span>
+                        </div>
+                        <div class="guide-actions">
+                            <a href="guide-profile.html?id=wanjiku" class="btn btn-outline">View Profile</a>
+                            <a href="#" class="btn btn-primary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-img">
+                        <img src="images/guide-omar.svg" alt="Guide Omar">
+                    </div>
+                    <div class="guide-content">
+                        <h3>Omar Farah</h3>
+                        <p class="guide-location">Lamu & Northern Coast</p>
+                        <div class="guide-specialties">
+                            <span>Sailing</span>
+                            <span>Architecture</span>
+                            <span>Island Life</span>
+                        </div>
+                        <p class="guide-bio">Dhow captain, architecture enthusiast, and Lamu native. I offer authentic sailing experiences around the Lamu archipelago, exploring ancient Swahili architecture, and connecting visitors with the unique island culture of coastal Kenya.</p>
+                        <div class="guide-meta">
+                            <span><i class="fas fa-star"></i> 4.9 (85 reviews)</span>
+                            <span><i class="fas fa-language"></i> English, Swahili, Arabic</span>
+                        </div>
+                        <div class="guide-actions">
+                            <a href="guide-profile.html?id=omar" class="btn btn-outline">View Profile</a>
+                            <a href="#" class="btn btn-primary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-img">
+                        <img src="images/guide-lucy.svg" alt="Guide Lucy">
+                    </div>
+                    <div class="guide-content">
+                        <h3>Lucy Akinyi</h3>
+                        <p class="guide-location">Kisumu & Lake Victoria</p>
+                        <div class="guide-specialties">
+                            <span>Fishing</span>
+                            <span>Cooking</span>
+                            <span>Music</span>
+                        </div>
+                        <p class="guide-bio">Fishing expert, cooking instructor, and music lover from Kisumu. Join me to experience traditional fishing on Lake Victoria, learn to cook authentic Luo dishes, and enjoy the vibrant music scene of western Kenya.</p>
+                        <div class="guide-meta">
+                            <span><i class="fas fa-star"></i> 4.8 (71 reviews)</span>
+                            <span><i class="fas fa-language"></i> English, Swahili, Luo</span>
+                        </div>
+                        <div class="guide-actions">
+                            <a href="guide-profile.html?id=lucy" class="btn btn-outline">View Profile</a>
+                            <a href="#" class="btn btn-primary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#" class="next">Next <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="become-guide">
+        <div class="container">
+            <div class="become-guide-content">
+                <h2>Share Your Kenya With The World</h2>
+                <p>Are you passionate about your region and culture? Join our community of local guides and earn income while sharing authentic experiences with travelers.</p>
+                <a href="become-guide.html" class="btn btn-primary">Become a Guide</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Kenya Unfiltered</h3>
+                    <p>Connecting international tourists with authentic, unfiltered Kenyan experiences through local guides and cultural immersion.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="guides.html">Local Guides</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="events.html">Events & Nightlife</a></li>
+                        <li><a href="cultural.html">Cultural Immersion</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>For Guides</h3>
+                    <ul>
+                        <li><a href="become-guide.html">Become a Guide</a></li>
+                        <li><a href="guide-resources.html">Guide Resources</a></li>
+                        <li><a href="community.html">Community Forum</a></li>
+                        <li><a href="training.html">Training & Certification</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="safety.html">Safety Information</a></li>
+                        <li><a href="cancellation.html">Cancellation Options</a></li>
+                        <li><a href="covid.html">COVID-19 Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kenya Unfiltered. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="cookies.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/guides.js"></script>
+</body>
+</html>
