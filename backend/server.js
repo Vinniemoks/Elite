@@ -11,6 +11,10 @@ const PORT = process.env.PORT || 5000;
 const UPLOAD_ROOT = process.env.UPLOAD_ROOT || path.join(__dirname, 'uploads');
 const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'http://localhost:8000').split(',');
 
+// Admin credentials from environment
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'change_me_please';
+
 // Ensure upload directories exist
 const ensureDir = (p) => { if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true }); };
 ensureDir(UPLOAD_ROOT);
@@ -18,8 +22,28 @@ ensureDir(path.join(UPLOAD_ROOT, 'resumes'));
 ensureDir(path.join(UPLOAD_ROOT, 'videos'));
 ensureDir(path.join(__dirname, 'applications'));
 
-app.use(cors({ origin: (origin, cb) => cb(null, ALLOWED_ORIGINS.includes(origin) || !origin), credentials: false }));
+app.use(cors({ origin: (origin, cb) => cb(null, ALLOWED_ORIGINS.includes(origin) || !origin), credentials: true }));
 app.use(express.json());
+
+// Basic authentication middleware for admin endpoints
+const basicAuth = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+  
+  if (!authHeader || !authHeader.startsWith('Basic ')) {
+    res.set('WWW-Authenticate', 'Basic realm="Admin Area"');
+    return res.status(401).json({ error: 'Authentication required' });
+  }
+  
+  const credentials = Buffer.from(authHeader.slice(6), 'base64').toString('utf-8');
+  const [username, password] = credentials.split(':');
+  
+  if (username !== ADMIN_USERNAME || password !== ADMIN_PASSWORD) {
+    res.set('WWW-Authenticate', 'Basic realm="Admin Area"');
+    return res.status(401).json({ error: 'Invalid credentials' });
+  }
+  
+  next();
+};
 
 // Multer storage with per-field subdirs
 const storage = multer.diskStorage({
@@ -107,7 +131,7 @@ app.post('/api/guides/apply', upload.fields([
 });
 
 // List applications (basic admin endpoint)
-app.get('/api/guides/applications', (req, res) => {
+app.get('/api/guides/applications', basicAuth, (req, res) => {
   try {
     const dir = path.join(__dirname, 'applications');
     ensureDir(dir);
@@ -137,8 +161,8 @@ app.get('/api/guides/applications', (req, res) => {
   }
 });
 
-// Get single application
-app.get('/api/guides/applications/:id', (req, res) => {
+// Get single application (protected)
+app.get('/api/guides/applications/:id', basicAuth, (req, res) => {
   try {
     const id = req.params.id;
     if (!id || id.includes('..')) return res.status(400).json({ error: 'Invalid id' });

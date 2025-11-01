@@ -15,9 +15,71 @@
     th { background: #fafafa; font-weight: 600; }
     .actions { display:flex; gap:0.5rem; }
     .tag { display:inline-block; padding:0.2rem 0.5rem; border:1px solid #ddd; border-radius:6px; font-size:0.8rem; }
+    .error { color: #b00020; margin: 1rem 0; }
+    
+    /* Login Modal Styles */
+    .login-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    
+    .login-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    .login-form h3 {
+      margin: 0 0 1.5rem 0;
+      text-align: center;
+    }
+    
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .btn-secondary {
+      background: #6c757d;
+      color: white;
+    }
+    
+    .btn-secondary:hover {
+      background: #5a6268;
+    }
   </style>
   <script>
-    window.GUIDE_API_URL = 'http://localhost:5000';
+    window.GUIDE_API_URL = 'http://localhost:5003';
   </script>
 </head>
 <body>
@@ -46,6 +108,27 @@
         <h1>Guide Applications</h1>
         <button id="refreshBtn" class="btn btn-outline">Refresh</button>
       </div>
+
+      <div id="loginModal" class="login-modal" style="display: none;">
+        <div class="login-form">
+          <h3>Admin Login</h3>
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Login</button>
+              <button type="button" id="cancelLogin" class="btn btn-secondary">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
       <div id="errorBox" class="error" style="display:none; color:#b00020; margin-bottom:0.75rem;"></div>
       <div class="table-responsive">
         <table id="appsTable">

@@ -8,9 +8,44 @@
   async function fetchList() {
     try {
       errorBox.style.display = 'none';
-      const resp = await fetch(`${API_URL}/api/guides/applications`);
+      
+      // Get stored credentials or prompt for them
+      let credentials = getStoredCredentials();
+      if (!credentials) {
+        credentials = await promptForCredentials();
+        if (!credentials) return; // User cancelled
+      }
+      
+      const resp = await fetch(`${API_URL}/api/guides/applications`, {
+        headers: {
+          'Authorization': `Basic ${btoa(`${credentials.username}:${credentials.password}`)}`
+        },
+        credentials: 'include'
+      });
+      
+      if (resp.status === 401) {
+        // Clear invalid credentials and retry
+        clearStoredCredentials();
+        credentials = await promptForCredentials();
+        if (!credentials) return;
+        
+        const retryResp = await fetch(`${API_URL}/api/guides/applications`, {
+          headers: {
+            'Authorization': `Basic ${btoa(`${credentials.username}:${credentials.password}`)}`
+          },
+          credentials: 'include'
+        });
+        
+        if (!retryResp.ok) throw new Error(`Authentication failed (${retryResp.status})`);
+        const data = await retryResp.json();
+        storeCredentials(credentials);
+        renderRows(data.items || []);
+        return;
+      }
+      
       if (!resp.ok) throw new Error(`Server ${resp.status}`);
       const data = await resp.json();
+      storeCredentials(credentials);
       renderRows(data.items || []);
     } catch (err) {
       tableBody.innerHTML = `<tr><td colspan="7">Failed to load applications.</td></tr>`;
@@ -50,17 +85,34 @@
 
   async function loadDetails(id) {
     try {
-      const resp = await fetch(`${API_URL}/api/guides/applications/${id}`);
+      const credentials = getStoredCredentials();
+      if (!credentials) {
+        alert('Please refresh the page to authenticate');
+        return;
+      }
+      
+      const resp = await fetch(`${API_URL}/api/guides/applications/${encodeURIComponent(id)}`, {
+        headers: {
+          'Authorization': `Basic ${btoa(`${credentials.username}:${credentials.password}`)}`
+        },
+        credentials: 'include'
+      });
+      
+      if (resp.status === 401) {
+        clearStoredCredentials();
+        alert('Authentication expired. Please refresh the page.');
+        return;
+      }
+      
       if (!resp.ok) throw new Error(`Server ${resp.status}`);
       const data = await resp.json();
-      alert(formatDetails(data));
+      showDetails(data);
     } catch (err) {
-      alert('Failed to load application details.');
-      console.error('Detail load error:', err);
+      alert(`Failed to load details: ${err.message}`);
     }
   }
 
-  function formatDetails(d) {
+  function showDetails(d) {
     const lines = [
       `Submitted: ${d.submittedAt || '-'}`,
       `Name: ${d.fullName || '-'}`,
@@ -72,11 +124,64 @@
       `Resume: ${d.files && d.files.resume ? 'Yes' : 'No'}`,
       `Video: ${d.files && d.files.video ? 'Yes' : 'No'}`,
     ];
-    return lines.join('\n');
+    alert(lines.join('\n'));
   }
 
   function escapeHtml(str) {
     return String(str).replace(/[&<>"]+/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[s]));
+  }
+
+  // Authentication helper functions
+  function getStoredCredentials() {
+    const stored = sessionStorage.getItem('adminCredentials');
+    return stored ? JSON.parse(stored) : null;
+  }
+
+  function storeCredentials(credentials) {
+    sessionStorage.setItem('adminCredentials', JSON.stringify(credentials));
+  }
+
+  function clearStoredCredentials() {
+    sessionStorage.removeItem('adminCredentials');
+  }
+
+  function promptForCredentials() {
+    return new Promise((resolve) => {
+      const modal = document.getElementById('loginModal');
+      const form = document.getElementById('loginForm');
+      const cancelBtn = document.getElementById('cancelLogin');
+      
+      // Show modal
+      modal.style.display = 'flex';
+      
+      // Handle form submission
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        if (username && password) {
+          modal.style.display = 'none';
+          form.removeEventListener('submit', handleSubmit);
+          cancelBtn.removeEventListener('click', handleCancel);
+          resolve({ username, password });
+        }
+      };
+      
+      // Handle cancel
+      const handleCancel = () => {
+        modal.style.display = 'none';
+        form.removeEventListener('submit', handleSubmit);
+        cancelBtn.removeEventListener('click', handleCancel);
+        resolve(null);
+      };
+      
+      form.addEventListener('submit', handleSubmit);
+      cancelBtn.addEventListener('click', handleCancel);
+      
+      // Focus username field
+      document.getElementById('username').focus();
+    });
   }
 
   refreshBtn?.addEventListener('click', fetchList);
