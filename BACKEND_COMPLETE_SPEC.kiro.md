@@ -1,6 +1,6 @@
 ---
 title: Elite Events Kenya - Complete Backend Implementation
-description: Production-ready Node.js backend API for Kenya Unfiltered tourism platform
+description: Production-ready Node.js backend API for Elite Events Kenya tourism platform
 version: 1.0.0
 ---
 
@@ -8,7 +8,7 @@ version: 1.0.0
 
 ## Overview
 
-Build a production-ready Node.js/Express backend API for Elite Events Kenya (Kenya Unfiltered) - a tourism platform connecting international tourists with verified local Kenyan guides for authentic experiences at local rates.
+Build a production-ready Node.js/Express backend API for Elite Events Kenya  - a tourism platform connecting international tourists with verified local Kenyan guides for authentic experiences at local rates.
 
 **Technology Stack:**
 - Node.js 18+ with Express.js

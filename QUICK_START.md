@@ -1,4 +1,4 @@
-# Quick Start Guide - Kenya Unfiltered
+# Quick Start Guide - Elite Events Kenya
 
 ## 🚀 Get Your Site Running in 5 Minutes
 
@@ -297,7 +297,7 @@ Ready to launch:
 
 ## 🚀 You're Ready!
 
-Your Kenya Unfiltered platform is production-ready. Follow this guide to get started, then dive into the detailed documentation for advanced features.
+Your Elite Events Kenya platform is production-ready. Follow this guide to get started, then dive into the detailed documentation for advanced features.
 
 **Remember:** Start simple, launch fast, iterate based on feedback.
 
