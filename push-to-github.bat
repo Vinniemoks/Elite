@@ -1,6 +1,6 @@
 @echo off
 echo ========================================
-echo Kenya Unfiltered - GitHub Push Script
+echo Elite Events Kenya - GitHub Push Script
 echo ========================================
 echo.
 
@@ -32,7 +32,7 @@ git add .
 
 echo.
 echo Step 4: Creating initial commit...
-git commit -m "Initial commit: Kenya Unfiltered platform - Production ready with SEO, dual currency, and complete documentation"
+git commit -m "Initial commit: Elite Events Kenya platform - Production ready with SEO, dual currency, and complete documentation"
 
 echo.
 echo Step 5: Setting up remote repository...

@@ -1,6 +1,6 @@
-# Kenya Unfiltered - Authentic Tourism Platform
+# Elite Events Kenya - Authentic Tourism Platform
 
-Kenya Unfiltered is a comprehensive digital platform connecting international tourists with authentic, unfiltered Kenyan experiences through local guides, cultural immersion, and insider access to the real Kenya and broader East Africa.
+Elite Events Kenya is a comprehensive digital platform connecting international tourists with authentic, unfiltered Kenyan experiences through local guides, cultural immersion, and insider access to the real Kenya and broader East Africa.
 
 ## Project Overview
 
