@@ -1,4 +1,4 @@
-// Main JavaScript for Kenya Unfiltered Platform
+// Main JavaScript for Elite Events Kenya Platform
 // Enhanced with currency toggle, mobile menu, search, and interactive features
 
 // Currency Exchange Rate (Update daily via API in production)
