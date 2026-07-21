@@ -26,55 +26,50 @@ function initializeContactForm() {
     }
 }
 
-function handleContactFormSubmit(e) {
+async function handleContactFormSubmit(e) {
     e.preventDefault();
-    
+
     const form = e.target;
     const formData = new FormData(form);
-    const messageDiv = document.getElementById('form-message');
-    
+
     // Validate all fields
     let isValid = true;
     const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
-    
+
     inputs.forEach(input => {
         if (!validateField(input)) {
             isValid = false;
         }
     });
-    
+
     if (!isValid) {
         showFormMessage('Please fill in all required fields correctly.', 'error');
         return;
     }
-    
+
     // Show loading state
     const submitButton = form.querySelector('button[type="submit"]');
     const originalButtonText = submitButton.textContent;
     submitButton.disabled = true;
     submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    
-    // Simulate API call (replace with actual API endpoint)
-    setTimeout(() => {
-        // In production, send data to backend
-        // fetch('/api/contact', {
-        //     method: 'POST',
-        //     body: formData
-        // })
-        
-        // Success response
-        showFormMessage('Thank you for your message! We\'ll get back to you within 24 hours.', 'success');
+
+    try {
+        const result = await EliteAPI.sendContactMessage({
+            name: `${formData.get('first-name')} ${formData.get('last-name')}`.trim(),
+            email: formData.get('email'),
+            phone: formData.get('phone') || undefined,
+            subject: formData.get('subject') || undefined,
+            message: formData.get('message')
+        });
+
+        showFormMessage(result.message || "Thank you for your message! We'll get back to you within 24 hours.", 'success');
         form.reset();
-        
-        // Reset button
+    } catch (error) {
+        showFormMessage(error.message, 'error');
+    } finally {
         submitButton.disabled = false;
         submitButton.textContent = originalButtonText;
-        
-        // Optional: Redirect after success
-        // setTimeout(() => {
-        //     window.location.href = 'thank-you.html';
-        // }, 2000);
-    }, 1500);
+    }
 }
 
 function validateField(field) {

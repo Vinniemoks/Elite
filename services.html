@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Package Services - Elite Tours</title>
+    <meta name="description" content="Elite Tours full-package travel services: airport pickup, custom destination trips with free consultation, private security, and car hire across Kenya.">
+    <link rel="canonical" href="https://elitetours.co.ke/services.html">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .services-hero {
+            background: linear-gradient(rgba(20, 40, 30, 0.55), rgba(20, 40, 30, 0.55)), url('images/scene-maasai-mara.svg') center/cover no-repeat;
+            color: #fff;
+            padding: 110px 20px 70px;
+            text-align: center;
+        }
+        .services-hero h1 { font-size: 2.4rem; margin-bottom: 0.5rem; }
+        .services-hero p { max-width: 640px; margin: 0 auto; font-size: 1.1rem; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            max-width: 1100px;
+            margin: -40px auto 2rem;
+            padding: 0 20px;
+        }
+        .service-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 2px solid transparent;
+        }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.14); }
+        .service-card.selected { border-color: var(--primary-color, #3c7a4e); }
+        .service-card i { font-size: 2rem; color: var(--primary-color, #3c7a4e); margin-bottom: 0.75rem; }
+        .service-card h3 { margin-bottom: 0.5rem; font-size: 1.05rem; }
+        .service-card p { font-size: 0.9rem; color: #555; }
+        .service-form-wrap { max-width: 720px; margin: 0 auto 3rem; padding: 0 20px; }
+        .service-form-card { background: #fff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); padding: 2rem; }
+        .service-form-card h2 { margin-bottom: 0.25rem; }
+        .service-form-card .sub { color: #666; margin-bottom: 1.25rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 0.75rem; border: 1px solid #e0e0e0; border-radius: 8px; font: inherit;
+        }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+        .consult-note {
+            background: #eef7f0; border: 1px solid #cfe8d6; color: #24552f;
+            border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Elite Tours</h1>
+                    <p class="tagline">Experience Kenya Through Local Eyes</p>
+                </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="experiences.html">Experiences</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="guides.html">Local Guides</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="services-hero">
+        <h1>Your Full-Package Travel Partner</h1>
+        <p>From the moment you land to the moment you leave: airport pickup, custom trips to Kenya's most breathtaking places, private security, and car hire — all arranged by one trusted team.</p>
+    </section>
+
+    <div class="services-grid">
+        <div class="service-card" data-type="AIRPORT_TRANSFER">
+            <i class="fas fa-plane-arrival"></i>
+            <h3>Airport Pickup &amp; Transfer</h3>
+            <p>Meet-and-greet at JKIA, Moi International, or Wilson. Comfortable vehicles, fixed prices, no haggling.</p>
+        </div>
+        <div class="service-card" data-type="DESTINATION_TRIP">
+            <i class="fas fa-mountain"></i>
+            <h3>Exotic Destination Trips</h3>
+            <p>Maasai Mara, Amboseli, Diani, Lamu, Mount Kenya — tell us where you dream of going, we plan everything.</p>
+        </div>
+        <div class="service-card" data-type="CONSULTATION">
+            <i class="fas fa-comments"></i>
+            <h3>Free Travel Consultation</h3>
+            <p>Not sure where to start? Talk to a local expert for free and get a personalized itinerary.</p>
+        </div>
+        <div class="service-card" data-type="SECURITY">
+            <i class="fas fa-user-shield"></i>
+            <h3>Private Security</h3>
+            <p>Licensed close-protection professionals for individuals, families, and executive travel.</p>
+        </div>
+        <div class="service-card" data-type="CAR_HIRE">
+            <i class="fas fa-car-side"></i>
+            <h3>Car Hire</h3>
+            <p>Self-drive or chauffeured — city cars, 4x4 safari Land Cruisers, and executive vehicles.</p>
+        </div>
+    </div>
+
+    <div class="service-form-wrap">
+        <div class="service-form-card">
+            <h2>Book a Service</h2>
+            <p class="sub">Leave your details and our team will call you back — usually within a few hours.</p>
+            <div class="consult-note"><i class="fas fa-gift"></i> Consultation is always <strong>free</strong> — you only pay when you book a service or trip.</div>
+            <form id="service-form">
+                <div class="form-group">
+                    <label for="service-type">Service</label>
+                    <select id="service-type" name="type" required>
+                        <option value="AIRPORT_TRANSFER">Airport Pickup &amp; Transfer</option>
+                        <option value="DESTINATION_TRIP">Exotic Destination Trip</option>
+                        <option value="CONSULTATION">Free Travel Consultation</option>
+                        <option value="SECURITY">Private Security</option>
+                        <option value="CAR_HIRE">Car Hire</option>
+                    </select>
+                </div>
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="svc-name">Full Name *</label>
+                        <input type="text" id="svc-name" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="svc-email">Email *</label>
+                        <input type="email" id="svc-email" name="email" required placeholder="you@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="svc-phone">Phone / WhatsApp</label>
+                        <input type="tel" id="svc-phone" name="phone" placeholder="+254 7...">
+                    </div>
+                    <div class="form-group">
+                        <label for="svc-date">Preferred Date</label>
+                        <input type="date" id="svc-date" name="preferredDate">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="svc-details">Tell us more</label>
+                    <textarea id="svc-details" name="details" rows="4" placeholder="Flight number and arrival time, destinations you'd like to visit, number of people, vehicle preference..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Request This Service</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Elite Tours</h2>
+                    <p>Experience Kenya Authentically through Local Eyes</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Explore</h3>
+                        <ul>
+                            <li><a href="experiences.html">Experiences</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="guides.html">Local Guides</a></li>
+                            <li><a href="become-guide.html">Become a Guide</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Elite Tours. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/254724023338?text=Hello%20Elite%20Tours,%20I%20need%20assistance%20with%20" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">24/7 Agent Support</span>
+    </a>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/services.js"></script>
+</body>
+</html>

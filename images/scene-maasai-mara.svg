@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="mmSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d1f4e"/>
+      <stop offset="0.35" stop-color="#93386b"/>
+      <stop offset="0.62" stop-color="#e0633f"/>
+      <stop offset="0.82" stop-color="#f7912f"/>
+      <stop offset="1" stop-color="#ffc153"/>
+    </linearGradient>
+    <radialGradient id="mmSunGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff3c4" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#ffd77a" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffd77a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mmHillsFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8a3a5c"/>
+      <stop offset="1" stop-color="#6e2f52"/>
+    </linearGradient>
+    <linearGradient id="mmPlain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a04a35"/>
+      <stop offset="1" stop-color="#6b2e26"/>
+    </linearGradient>
+    <linearGradient id="mmFore" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#42201d"/>
+      <stop offset="1" stop-color="#241012"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1600" height="900" fill="url(#mmSky)"/>
+
+  <!-- Sun and glow -->
+  <circle cx="1080" cy="620" r="330" fill="url(#mmSunGlow)"/>
+  <circle cx="1080" cy="620" r="110" fill="#ffe9a8"/>
+  <circle cx="1080" cy="620" r="96" fill="#fff6d8"/>
+
+  <!-- Streaked clouds -->
+  <g fill="#5c2450" opacity="0.5">
+    <ellipse cx="380" cy="180" rx="300" ry="16"/>
+    <ellipse cx="620" cy="240" rx="220" ry="11"/>
+    <ellipse cx="1220" cy="150" rx="260" ry="13"/>
+  </g>
+  <g fill="#ff9e57" opacity="0.55">
+    <ellipse cx="900" cy="380" rx="360" ry="12"/>
+    <ellipse cx="1250" cy="440" rx="240" ry="9"/>
+    <ellipse cx="500" cy="430" rx="280" ry="10"/>
+  </g>
+
+  <!-- Distant escarpment -->
+  <path d="M0,565 L120,540 L260,558 L420,528 L560,552 L700,536 L820,556 L960,542 L1120,560 L1280,538 L1420,556 L1600,544 L1600,640 L0,640 Z" fill="url(#mmHillsFar)" opacity="0.8"/>
+
+  <!-- Savanna plain -->
+  <path d="M0,640 L1600,628 L1600,760 L0,760 Z" fill="url(#mmPlain)"/>
+
+  <!-- Mid-ground acacia and wildlife silhouettes -->
+  <g fill="#3a1520">
+    <!-- acacia tree mid -->
+    <g transform="translate(1350,560) scale(0.75)">
+      <path d="M0,120 L6,40 L2,38 L14,0 L26,38 L22,40 L28,120 Z" transform="translate(60,-10)"/>
+      <ellipse cx="74" cy="18" rx="105" ry="22"/>
+      <path d="M30,40 L74,18 M74,18 L120,42 M74,18 L74,-4" stroke="#3a1520" stroke-width="6" fill="none"/>
+    </g>
+    <!-- wildebeest line -->
+    <g transform="translate(180,690)">
+      <path d="M0,0 q8,-16 24,-16 q6,-10 16,-8 l4,-8 6,8 q14,0 18,10 l8,14 -8,0 -4,-8 -6,8 -10,0 -2,-6 -8,6 -10,0 0,-8 -8,8 Z"/>
+      <path d="M90,2 q8,-16 24,-16 q6,-10 16,-8 l4,-8 6,8 q14,0 18,10 l8,14 -8,0 -4,-8 -6,8 -10,0 -2,-6 -8,6 -10,0 0,-8 -8,8 Z" transform="scale(0.9)"/>
+    </g>
+  </g>
+
+  <!-- Foreground band with grass -->
+  <path d="M0,758 C300,742 600,766 900,752 C1150,742 1400,760 1600,750 L1600,900 L0,900 Z" fill="url(#mmFore)"/>
+
+  <!-- Foreground acacia (large, iconic) -->
+  <g fill="#1c0b10">
+    <g transform="translate(120,470)">
+      <path d="M118,290 L128,150 L120,146 L146,60 L172,146 L164,150 L176,290 Z"/>
+      <path d="M146,64 L58,26 M146,64 L240,20 M146,64 L146,-8 M146,64 L96,-2 M146,64 L204,-6" stroke="#1c0b10" stroke-width="10" fill="none"/>
+      <ellipse cx="146" cy="6" rx="190" ry="38"/>
+      <ellipse cx="60" cy="30" rx="70" ry="20"/>
+      <ellipse cx="238" cy="26" rx="76" ry="21"/>
+    </g>
+    <!-- elephants walking -->
+    <g transform="translate(700,780)">
+      <path d="M0,60 L4,20 Q6,0 30,-2 Q48,-6 60,4 Q78,-2 88,10 L92,26 Q96,44 84,46 L84,60 74,60 72,46 56,46 54,60 44,60 42,44 20,46 18,60 8,60 Z"/>
+      <path d="M88,12 q14,4 12,22 q-2,10 -10,10 l-2,14 -6,0" fill="none" stroke="#1c0b10" stroke-width="7"/>
+    </g>
+    <g transform="translate(840,792) scale(0.6)">
+      <path d="M0,60 L4,20 Q6,0 30,-2 Q48,-6 60,4 Q78,-2 88,10 L92,26 Q96,44 84,46 L84,60 74,60 72,46 56,46 54,60 44,60 42,44 20,46 18,60 8,60 Z"/>
+    </g>
+    <!-- giraffe -->
+    <g transform="translate(1180,720)">
+      <path d="M0,120 L6,64 Q4,50 16,44 L52,40 Q60,40 64,30 L78,-34 Q80,-44 88,-44 Q96,-44 96,-34 L96,-28 104,-30 104,-22 96,-20 90,36 Q88,48 76,52 L68,54 74,120 62,120 56,58 30,60 24,120 12,120 Z"/>
+      <circle cx="92" cy="-40" r="7"/>
+    </g>
+    <!-- grass tufts -->
+    <g stroke="#1c0b10" stroke-width="4" fill="none">
+      <path d="M60,880 q4,-30 -6,-48 M72,880 q2,-26 10,-44 M84,880 q-2,-30 -14,-40"/>
+      <path d="M1500,868 q4,-30 -6,-48 M1512,868 q2,-26 10,-44 M1524,868 q-2,-30 -14,-40"/>
+      <path d="M980,890 q4,-26 -4,-42 M992,890 q2,-24 8,-38"/>
+    </g>
+  </g>
+
+  <!-- Birds -->
+  <g stroke="#2b1230" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M420,180 q10,-12 20,0 q10,-12 20,0"/>
+    <path d="M480,150 q8,-10 16,0 q8,-10 16,0"/>
+    <path d="M380,220 q7,-9 14,0 q7,-9 14,0"/>
+  </g>
+</svg>

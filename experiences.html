@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authentic Experiences - Elite Events and Safaris Kenya</title>
+    <title>Authentic Experiences - Elite Tours</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/experiences.css">
     <link rel="stylesheet" href="css/video-player.css">
@@ -14,7 +14,7 @@
         <nav class="navbar">
             <div class="logo">
                 <a href="index.html">
-                    <h1>Elite Events and Safaris Kenya</h1>
+                    <h1>Elite Tours</h1>
                 </a>
             </div>
             <div class="nav-links">
@@ -97,6 +97,10 @@
                     </select>
                 </div>
                 <button class="btn btn-primary filter-btn">Apply Filters</button>
+
+                <!-- Live experiences loaded from the API -->
+                <div id="live-experiences" class="live-experiences" style="display:contents;"></div>
+
                 <!-- Coastal Beaches Experience -->
                 <div class="experience-card">
                     <div class="experience-img">
@@ -239,13 +243,11 @@
      
      <!-- Video Modal Container will be created dynamically -->
      
-     <script src="js/main.js"></script>
-     <script src="js/video-player.js"></script>
         <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h2>Elite Events and Safaris Kenya</h2>
+                    <h2>Elite Tours</h2>
                     <p>Experience Kenya Authentically through Local Eyes</p>
                 </div>
                 <div class="footer-links">
@@ -288,7 +290,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Elite Events and Safaris Kenya. All rights reserved.</p>
+                <p>&copy; 2023 Elite Tours. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -686,7 +688,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
-                    <h3>Elite Events Kenya</h3>
+                    <h3>Elite Tours</h3>
                     <p>Connecting international tourists with authentic, unfiltered Kenyan experiences through local guides and cultural immersion.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -725,7 +727,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Elite Events Kenya. All rights reserved.</p>
+                <p>&copy; 2023 Elite Tours. All rights reserved.</p>
                 <div class="footer-bottom-links">
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Service</a>
@@ -735,10 +737,12 @@
         </div>
     </footer>
 
+    <script src="js/api.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/experiences.js"></script>
+    <script src="js/video-player.js"></script>
+    <script src="js/experiences-live.js"></script>
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/254700000000?text=Hello%20Elite%20Events%20and%20Safaris%20Kenya,%20I%20need%20assistance%20with%20" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/254724023338?text=Hello%20Elite%20Tours,%20I%20need%20assistance%20with%20" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
         <span class="whatsapp-tooltip">24/7 Agent Support</span>
     </a>

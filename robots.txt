@@ -9,4 +9,4 @@ Disallow: /messages.html
 Disallow: /profile.html
 Disallow: /settings.html
 
-Sitemap: https://kenyaunfiltered.com/sitemap.xml
+Sitemap: https://elitetours.co.ke/sitemap.xml

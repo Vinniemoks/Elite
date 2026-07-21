@@ -1,6 +1,5 @@
 // Guide Registration: Video recording, validation, and backend submission
 (function() {
-  const API_URL = window.GUIDE_API_URL || 'http://localhost:5000';
   const form = document.getElementById('guide-application-form');
   const successBanner = document.getElementById('success-banner');
   const startBtn = document.getElementById('startRecording');
@@ -112,21 +111,48 @@
     e.preventDefault();
     if (!validateForm()) return;
 
-    const fd = new FormData(form);
-    // Append recorded video if available
+    // Applying requires an account: the application is tied to the user profile
+    if (!window.EliteAPI || !EliteAPI.isLoggedIn()) {
+      alert('Please create an account (or log in) first — your guide application is linked to your profile.');
+      window.location.href = 'signup.html?redirect=become-guide.html';
+      return;
+    }
+
+    const raw = new FormData(form);
+
+    // Map form fields to the API's expected shape
+    const fd = new FormData();
+    fd.append('bio', raw.get('bio') || '');
+    fd.append('region', raw.get('location') || '');
+    fd.append('languages', raw.get('languages') || '');
+    fd.append('yearsOfExperience', raw.get('experienceYears') || '0');
+    fd.append(
+      'socialLinks',
+      JSON.stringify({
+        phone: raw.get('phone') || null,
+        socialEmails: raw.get('socialEmails') || null,
+        facebook: raw.get('facebook') || null,
+        instagram: raw.get('instagram') || null,
+        twitter: raw.get('twitter') || null,
+        tiktok: raw.get('tiktok') || null,
+        youtube: raw.get('youtube') || null
+      })
+    );
+
+    if (resumeInput.files[0]) {
+      fd.append('resume', resumeInput.files[0]);
+    }
     if (recordedBlob) {
       fd.append('video', recordedBlob, 'intro.webm');
+    } else if (videoFileInput.files[0]) {
+      fd.append('video', videoFileInput.files[0]);
     }
-    // Append uploaded video file otherwise (already part of fd via input)
 
-    // Try backend submission; fallback to local simulation on failure
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (submitButton) submitButton.disabled = true;
+
     try {
-      const resp = await fetch(`${API_URL}/api/guides/apply`, { method: 'POST', body: fd });
-      if (!resp.ok) {
-        const msg = await safeError(resp);
-        throw new Error(msg || `Server responded ${resp.status}`);
-      }
-      const data = await resp.json();
+      await EliteAPI.applyAsGuide(fd);
       successBanner.textContent = 'Application submitted successfully. We will review and contact you.';
       successBanner.style.display = 'block';
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -134,39 +160,17 @@
       recordedBlob = null;
       recordedChunks = [];
       videoEl.src = '';
-      alert('Thank you! Your application has been received.');
     } catch (err) {
-      console.warn('Backend submission failed, falling back to local capture:', err);
-      const payloadSummary = {
-        fullName: fd.get('fullName'),
-        email: fd.get('email'),
-        phone: fd.get('phone'),
-        location: fd.get('location'),
-        languages: fd.get('languages'),
-        experienceYears: fd.get('experienceYears'),
-        socialEmails: fd.get('socialEmails'),
-        facebook: fd.get('facebook'),
-        instagram: fd.get('instagram'),
-        twitter: fd.get('twitter'),
-        tiktok: fd.get('tiktok'),
-        youtube: fd.get('youtube'),
-        resumeFileName: (resumeInput.files[0] && resumeInput.files[0].name) || null,
-        hasRecordedVideo: !!recordedBlob,
-        uploadedVideoFileName: (videoFileInput.files[0] && videoFileInput.files[0].name) || null,
-      };
-      console.log('Guide application payload (local simulation):', payloadSummary);
-      successBanner.textContent = 'Your application has been captured locally. Backend unavailable.';
+      console.error('Guide application failed:', err);
+      successBanner.textContent = `Submission failed: ${err.message}`;
       successBanner.style.display = 'block';
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      alert('Backend is unavailable. We captured your application locally for now.');
+    } finally {
+      if (submitButton) submitButton.disabled = false;
     }
   });
 
   startBtn?.addEventListener('click', startRecording);
   stopBtn?.addEventListener('click', stopRecording);
   window.addEventListener('beforeunload', cleanupStream);
-
-  async function safeError(resp) {
-    try { const j = await resp.json(); return j && (j.error || j.message); } catch { return null; }
-  }
 })();

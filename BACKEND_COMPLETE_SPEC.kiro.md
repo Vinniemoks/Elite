@@ -1,14 +1,14 @@
 ---
-title: Elite Events Kenya - Complete Backend Implementation
-description: Production-ready Node.js backend API for Elite Events Kenya tourism platform
+title: Elite Tours - Complete Backend Implementation
+description: Production-ready Node.js backend API for Elite Tours tourism platform
 version: 1.0.0
 ---
 
-# Elite Events Kenya - Complete Backend Implementation Spec
+# Elite Tours - Complete Backend Implementation Spec
 
 ## Overview
 
-Build a production-ready Node.js/Express backend API for Elite Events Kenya  - a tourism platform connecting international tourists with verified local Kenyan guides for authentic experiences at local rates.
+Build a production-ready Node.js/Express backend API for Elite Tours  - a tourism platform connecting international tourists with verified local Kenyan guides for authentic experiences at local rates.
 
 **Technology Stack:**
 - Node.js 18+ with Express.js
@@ -613,8 +613,8 @@ backend/
 ```
 NODE_ENV=production
 PORT=5000
-API_URL=https://api.eliteeventskenya.com
-FRONTEND_URL=https://eliteeventskenya.com
+API_URL=https://api.elitetours.co.ke
+FRONTEND_URL=https://elitetours.co.ke
 
 DATABASE_URL=postgresql://user:pass@host:5432/db
 REDIS_URL=redis://host:6379
@@ -641,7 +641,7 @@ PAYPAL_CLIENT_ID=your_id
 PAYPAL_CLIENT_SECRET=your_secret
 
 SENDGRID_API_KEY=SG.your_key
-FROM_EMAIL=noreply@eliteeventskenya.com
+FROM_EMAIL=noreply@elitetours.co.ke
 
 AT_API_KEY=your_key
 AT_USERNAME=your_username
@@ -845,13 +845,13 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Elite Events Kenya API',
+      title: 'Elite Tours API',
       version: '1.0.0',
-      description: 'API documentation for Elite Events Kenya platform'
+      description: 'API documentation for Elite Tours platform'
     },
     servers: [
       {
-        url: 'https://api.eliteeventskenya.com',
+        url: 'https://api.elitetours.co.ke',
         description: 'Production server'
       },
       {
@@ -890,16 +890,16 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 ```nginx
 server {
     listen 80;
-    server_name api.eliteeventskenya.com;
+    server_name api.elitetours.co.ke;
     return 301 https://$server_name$request_uri;
 }
 
 server {
     listen 443 ssl http2;
-    server_name api.eliteeventskenya.com;
+    server_name api.elitetours.co.ke;
 
-    ssl_certificate /etc/letsencrypt/live/api.eliteeventskenya.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/api.eliteeventskenya.com/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/api.elitetours.co.ke/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/api.elitetours.co.ke/privkey.pem;
 
     location / {
         proxy_pass http://localhost:5000;
@@ -1118,7 +1118,7 @@ jobs:
 
 ## Conclusion
 
-This comprehensive specification provides everything needed to build a production-ready backend for Elite Events Kenya. Follow the tasks sequentially, ensure all requirements are met, and maintain high code quality throughout development.
+This comprehensive specification provides everything needed to build a production-ready backend for Elite Tours. Follow the tasks sequentially, ensure all requirements are met, and maintain high code quality throughout development.
 
 **Key Success Factors:**
 1. Follow the specification closely

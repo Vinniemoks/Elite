@@ -1,4 +1,4 @@
-# Quick Start Guide - Elite Events Kenya
+# Quick Start Guide - Elite Tours
 
 ## 🚀 Get Your Site Running in 5 Minutes
 
@@ -26,14 +26,14 @@ Open your browser and go to: `http://localhost:8000`
 
 **Replace these placeholders:**
 
-1. **Phone Number** - Find and replace `+254 700 000 000` with your real number
-2. **Email** - Find and replace `info@kenyaunfiltered.com` with your email
+1. **Phone Number** - Find and replace `+254 724 023 338` with your real number
+2. **Email** - Find and replace `info@elitetours.co.ke` with your email
 3. **Social Media** - Update links in footer (Facebook, Instagram, Twitter, YouTube)
 4. **Google Analytics** - Replace `GA_MEASUREMENT_ID` in index.html with your tracking ID
 
 **Quick find & replace in your code editor:**
-- Search: `+254 700 000 000` → Replace with your phone
-- Search: `info@kenyaunfiltered.com` → Replace with your email
+- Search: `+254 724 023 338` → Replace with your phone
+- Search: `info@elitetours.co.ke` → Replace with your email
 - Search: `GA_MEASUREMENT_ID` → Replace with your Google Analytics ID
 
 ---
@@ -297,7 +297,7 @@ Ready to launch:
 
 ## 🚀 You're Ready!
 
-Your Elite Events Kenya platform is production-ready. Follow this guide to get started, then dive into the detailed documentation for advanced features.
+Your Elite Tours platform is production-ready. Follow this guide to get started, then dive into the detailed documentation for advanced features.
 
 **Remember:** Start simple, launch fast, iterate based on feedback.
 

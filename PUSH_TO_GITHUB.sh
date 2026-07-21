@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "========================================"
-echo "Elite Events Kenya - GitHub Push Script"
+echo "Elite Tours - GitHub Push Script"
 echo "========================================"
 echo ""
 echo "This script will push your code to GitHub."

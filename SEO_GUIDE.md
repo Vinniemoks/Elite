@@ -1,7 +1,7 @@
-# SEO Optimization Guide for Elite Events Kenya
+# SEO Optimization Guide for Elite Tours
 
 ## Overview
-This guide provides comprehensive SEO strategies to rank Elite Events Kenya at the top of search results for local guides in Kenya and specific geographical areas.
+This guide provides comprehensive SEO strategies to rank Elite Tours at the top of search results for local guides in Kenya and specific geographical areas.
 
 ---
 
@@ -44,10 +44,10 @@ This guide provides comprehensive SEO strategies to rank Elite Events Kenya at t
 ### 1. Title Tags (Already Implemented)
 ```html
 <!-- Homepage -->
-<title>Elite Events Kenya - Local Guides in Kenya | Authentic Experiences at Local Rates</title>
+<title>Elite Tours - Local Guides in Kenya | Authentic Experiences at Local Rates</title>
 
 <!-- Guides Page -->
-<title>Find Local Guides in Kenya - Nairobi, Mombasa, Kisumu | Elite Events Kenya</title>
+<title>Find Local Guides in Kenya - Nairobi, Mombasa, Kisumu | Elite Tours</title>
 
 <!-- Experiences Page -->
 <title>Authentic Kenya Experiences - Cultural Tours, Nightlife & Adventures</title>
@@ -223,9 +223,9 @@ Content similar structure to Nairobi
 {
   "@context": "https://schema.org",
   "@type": "TravelAgency",
-  "name": "Elite Events Kenya",
+  "name": "Elite Tours",
   "description": "Connect with verified local guides for authentic Kenyan experiences",
-  "url": "https://eliteeventskenya.com",
+  "url": "https://elitetours.co.ke",
   "telephone": "+254-700-000-000",
   "address": {
     "@type": "PostalAddress",
@@ -256,7 +256,7 @@ Content similar structure to Nairobi
   "name": "James Omondi",
   "jobTitle": "Local Tour Guide",
   "description": "Urban explorer and foodie with 7 years of guiding experience in Nairobi",
-  "image": "https://kenyaunfiltered.com/images/guide-james.jpg",
+  "image": "https://elitetours.co.ke/images/guide-james.jpg",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Nairobi",
@@ -280,7 +280,7 @@ Content similar structure to Nairobi
   "@type": "TouristAttraction",
   "name": "Nairobi After Dark",
   "description": "Experience vibrant nightlife with a local guide",
-  "image": "https://kenyaunfiltered.com/images/nairobi-night.jpg",
+  "image": "https://elitetours.co.ke/images/nairobi-night.jpg",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Nairobi",
@@ -337,7 +337,7 @@ Content similar structure to Nairobi
 
 #### Google My Business Optimization:
 ```
-Business Name: Elite Events Kenya
+Business Name: Elite Tours
 Category: Tour Operator, Travel Agency
 Description: Connect with verified local guides for authentic Kenyan experiences at local rates
 Services: Local Tours, Cultural Experiences, Nightlife Tours, Adventure Tours

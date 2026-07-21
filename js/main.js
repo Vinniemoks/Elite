@@ -1,4 +1,4 @@
-// Main JavaScript for Elite Events Kenya Platform
+// Main JavaScript for Elite Tours Platform
 // Enhanced with currency toggle, mobile menu, search, and interactive features
 
 // Currency Exchange Rate (Update daily via API in production)
@@ -181,9 +181,9 @@ function performSearch() {
     if (searchInput && searchInput.value.trim() !== '') {
         const query = encodeURIComponent(searchInput.value.trim());
         const category = searchSelect ? searchSelect.value : '';
-        
-        // Redirect to search results page (to be created)
-        window.location.href = `search.html?q=${query}&category=${category}`;
+
+        // Experiences page shows live, filterable listings
+        window.location.href = `experiences.html?q=${query}&category=${encodeURIComponent(category)}`;
     }
 }
 

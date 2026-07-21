@@ -1,6 +1,6 @@
-# Elite Events Kenya - Authentic Tourism Platform
+# Elite Tours - Authentic Tourism Platform
 
-Elite Events Kenya is a comprehensive digital platform connecting international tourists with authentic, unfiltered Kenyan experiences through local guides, cultural immersion, and insider access to the real Kenya and broader East Africa.
+Elite Tours is a comprehensive digital platform connecting international tourists with authentic, unfiltered Kenyan experiences through local guides, cultural immersion, and insider access to the real Kenya and broader East Africa.
 
 ## Project Overview
 
@@ -45,12 +45,12 @@ This platform bridges tourists with vetted local guides and experiences, offerin
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/kenya-unfiltered.git
+   git clone https://github.com/your-username/elite-tours.git
    ```
 
 2. Navigate to the project directory:
    ```
-   cd kenya-unfiltered
+   cd elite-tours
    ```
 
 3. Open the project in your preferred code editor
@@ -77,7 +77,7 @@ This platform bridges tourists with vetted local guides and experiences, offerin
 ## Project Structure
 
 ```
-kenya-unfiltered/
+elite-tours/
 ├── css/
 │   ├── styles.css
 │   ├── experiences.css
@@ -127,4 +127,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-For any inquiries, please contact us at info@kenyaunfiltered.com
+For any inquiries, please contact us at info@elitetours.co.ke

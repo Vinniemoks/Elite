@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Portal - Elite Tours</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background: #f4f6f5; }
+        .staff-wrap { max-width: 1200px; margin: 0 auto; padding: 100px 20px 60px; }
+        .staff-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+        .staff-header h1 { margin: 0; font-size: 1.6rem; }
+        .staff-badge { background: #24552f; color: #fff; padding: 4px 12px; border-radius: 999px; font-size: 0.85rem; }
+        .staff-filters { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .staff-filters select { padding: 0.5rem 0.75rem; border: 1px solid #ddd; border-radius: 8px; background: #fff; font: inherit; }
+        .lead-table-wrap { background: #fff; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); overflow-x: auto; margin-bottom: 2.5rem; }
+        table.leads { width: 100%; border-collapse: collapse; min-width: 900px; }
+        table.leads th, table.leads td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #f0f0f0; vertical-align: top; font-size: 0.92rem; }
+        table.leads th { background: #fafbfa; font-weight: 700; white-space: nowrap; }
+        .lead-type { font-weight: 600; white-space: nowrap; }
+        .lead-contact div { white-space: nowrap; }
+        .lead-details { max-width: 280px; }
+        .status-pill { padding: 2px 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; display: inline-block; }
+        .status-NEW { background: #fff3cd; color: #7a5b00; }
+        .status-IN_PROGRESS { background: #cfe2ff; color: #084298; }
+        .status-CLOSED { background: #e2e3e5; color: #41464b; }
+        .lead-actions select, .lead-actions textarea { width: 100%; padding: 0.4rem; border: 1px solid #ddd; border-radius: 6px; font: inherit; font-size: 0.85rem; }
+        .lead-actions textarea { margin-top: 0.4rem; min-height: 48px; }
+        .lead-actions button { margin-top: 0.4rem; padding: 0.35rem 0.9rem; border: none; border-radius: 6px; background: var(--primary-color, #3c7a4e); color: #fff; cursor: pointer; font-size: 0.85rem; }
+        .section-h { margin: 0 0 0.75rem; font-size: 1.2rem; }
+        .empty-row td { text-align: center; color: #888; padding: 2rem; }
+        #staff-guard { text-align: center; padding: 140px 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Elite Tours</h1>
+                    <p class="tagline">Staff Portal</p>
+                </a>
+            </div>
+            <div class="auth-buttons">
+                <a href="index.html" class="btn btn-outline">Back to Site</a>
+            </div>
+        </nav>
+    </header>
+
+    <div id="staff-guard">
+        <p><i class="fas fa-spinner fa-spin"></i> Checking access…</p>
+    </div>
+
+    <main class="staff-wrap" id="staff-main" style="display:none;">
+        <div class="staff-header">
+            <h1>Customer Requests <span class="staff-badge" id="new-count-badge">0 new</span></h1>
+            <div class="staff-filters">
+                <select id="filter-status">
+                    <option value="">All statuses</option>
+                    <option value="NEW">New</option>
+                    <option value="IN_PROGRESS">In progress</option>
+                    <option value="CLOSED">Closed</option>
+                </select>
+                <select id="filter-type">
+                    <option value="">All services</option>
+                    <option value="AIRPORT_TRANSFER">Airport Transfer</option>
+                    <option value="DESTINATION_TRIP">Destination Trip</option>
+                    <option value="CONSULTATION">Consultation</option>
+                    <option value="SECURITY">Private Security</option>
+                    <option value="CAR_HIRE">Car Hire</option>
+                    <option value="GENERAL">General Inquiry</option>
+                </select>
+                <button id="refresh-btn" class="btn btn-outline" style="padding:0.4rem 1rem;"><i class="fas fa-rotate"></i> Refresh</button>
+            </div>
+        </div>
+
+        <div class="lead-table-wrap">
+            <table class="leads">
+                <thead>
+                    <tr>
+                        <th>Received</th>
+                        <th>Service</th>
+                        <th>Customer</th>
+                        <th>Preferred Date</th>
+                        <th>Details</th>
+                        <th>Status</th>
+                        <th style="min-width:220px;">Update</th>
+                    </tr>
+                </thead>
+                <tbody id="leads-body"></tbody>
+            </table>
+        </div>
+
+        <h2 class="section-h">Recent Experience Bookings</h2>
+        <div class="lead-table-wrap">
+            <table class="leads">
+                <thead>
+                    <tr>
+                        <th>Booked</th>
+                        <th>Experience</th>
+                        <th>Tourist</th>
+                        <th>Guide</th>
+                        <th>Date</th>
+                        <th>Guests</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="bookings-body"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/staff.js"></script>
+</body>
+</html>
