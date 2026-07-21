@@ -34,10 +34,16 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#e74c3c">
+    <meta name="theme-color" content="#0B132B">
     
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/executive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <!-- Structured Data for SEO -->
@@ -116,9 +122,15 @@
                     <li><a href="experiences.html">Destinations</a></li>
                 </ul>
             </div>
-            <div class="auth-buttons">
-                <a href="login.html" class="btn btn-outline">Login</a>
-                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            <div class="nav-right">
+                <div class="nav-currency" role="group" aria-label="Currency">
+                    <button type="button" data-currency="USD" class="active">USD</button>
+                    <button type="button" data-currency="KES">KES</button>
+                </div>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                </div>
             </div>
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -126,20 +138,38 @@
         </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
-            <h1>Discover Authentic Kenya</h1>
-            <p>Connect with verified local guides for authentic, unfiltered Kenyan experiences at local rates</p>
-            <div class="search-container">
-                <input type="text" placeholder="What would you like to experience?">
-                <select>
-                    <option value="">All Categories</option>
-                    <option value="guides">Local Guides</option>
-                    <option value="events">Events & Nightlife</option>
-                    <option value="cultural">Cultural Immersion</option>
-                    <option value="destinations">Hidden Destinations</option>
-                </select>
-                <button class="btn btn-primary">Explore</button>
+            <span class="eyebrow reveal reveal-1"><i class="fas fa-shield-alt"></i> Verified guides · Local rates · Full-package travel</span>
+            <h1 class="reveal reveal-2">Experience Kenya, <span class="accent">Through Local Eyes</span></h1>
+            <p class="subtitle reveal reveal-3">From the Maasai Mara at golden hour to the turquoise coast of Diani — book vetted local guides, exotic getaways, airport transfers, and executive travel, all in one place.</p>
+
+            <div class="search-widget reveal reveal-4">
+                <div class="search-tabs" role="tablist">
+                    <button class="search-tab active" data-search-mode="experiences" role="tab"><i class="fas fa-compass"></i>Explore Experiences</button>
+                    <button class="search-tab" data-search-mode="guides" role="tab"><i class="fas fa-user-tie"></i>Book a Local Guide</button>
+                    <button class="search-tab" data-search-mode="services" role="tab"><i class="fas fa-car-side"></i>Car Hire &amp; Services</button>
+                </div>
+
+                <div class="search-container" id="hero-search">
+                    <input type="text" id="hero-search-input" placeholder="What would you like to experience?" autocomplete="off" aria-label="Search">
+                    <select id="hero-search-filter" aria-label="Category">
+                        <option value="">All Categories</option>
+                        <option value="safari">Safari &amp; Wildlife</option>
+                        <option value="nightlife">Events &amp; Nightlife</option>
+                        <option value="cultural">Cultural Immersion</option>
+                        <option value="food">Food &amp; Cooking</option>
+                        <option value="adventure">Adventure</option>
+                    </select>
+                    <button type="button" id="hero-search-btn"><i class="fas fa-search"></i> Explore</button>
+                    <div class="search-preview" id="hero-search-preview" role="listbox" aria-label="Search results"></div>
+                </div>
+
+                <div class="hero-trust">
+                    <span><i class="fas fa-check-circle"></i> 100% Verified Guides</span>
+                    <span><i class="fas fa-mobile-alt"></i> Pay with M-Pesa or Card</span>
+                    <span><i class="fas fa-headset"></i> 24/7 Support</span>
+                </div>
             </div>
         </div>
     </section>
@@ -218,7 +248,7 @@
             <div class="experience-grid">
                 <div class="experience-card">
                     <div class="experience-img">
-                        <img src="images/nairobi-night.jpg" alt="Nairobi Nightlife">
+                        <img src="images/nairobi-night.svg" alt="Nairobi Nightlife">
                     </div>
                     <div class="experience-content">
                         <span class="category">Nightlife</span>
@@ -234,7 +264,7 @@
                 </div>
                 <div class="experience-card">
                     <div class="experience-img">
-                        <img src="images/local-cooking.jpg" alt="Kenyan Cooking">
+                        <img src="images/local-cooking.svg" alt="Kenyan Cooking">
                     </div>
                     <div class="experience-content">
                         <span class="category">Cultural Immersion</span>
@@ -250,7 +280,7 @@
                 </div>
                 <div class="experience-card">
                     <div class="experience-img">
-                        <img src="images/hidden-waterfall.jpg" alt="Hidden Waterfall">
+                        <img src="images/hidden-waterfall.svg" alt="Hidden Waterfall">
                     </div>
                     <div class="experience-content">
                         <span class="category">Hidden Gems</span>
@@ -271,58 +301,63 @@
         </div>
     </section>
 
-    <section class="guides" id="guides">
+    <section class="featured-guides" id="guides">
         <div class="container">
-            <h2 class="section-title">Meet Our Local Guides</h2>
-            <div class="guides-grid">
-                <div class="guide-card">
-                    <div class="guide-img">
-                        <img src="images/guide-james.jpg" alt="Guide James">
+            <h2 class="section-title">Featured Local Guides</h2>
+            <p style="text-align:center;max-width:620px;margin:-1.5rem auto 3rem;color:var(--slate);">
+                Hand-picked, background-checked, and rated by real travelers. Connect directly and plan your trip.
+            </p>
+            <div class="guides-rail" id="featured-guides-rail">
+                <div class="vguide-card">
+                    <div class="vguide-avatar-wrap">
+                        <img class="vguide-avatar" src="images/guide-james.svg" alt="James Omondi" onerror="this.src='images/user-avatar.svg'">
+                        <span class="vguide-verified" title="Verified guide"><i class="fas fa-check"></i></span>
                     </div>
-                    <div class="guide-content">
-                        <h3>James Omondi</h3>
-                        <p class="guide-location">Nairobi & Central Kenya</p>
-                        <p class="guide-bio">Urban explorer, foodie, and history buff with 7 years of guiding experience.</p>
-                        <div class="guide-meta">
-                            <span><i class="fas fa-star"></i> 4.9 (127 reviews)</span>
-                            <span><i class="fas fa-language"></i> English, Swahili</span>
-                        </div>
-                        <a href="#" class="btn btn-outline">View Profile</a>
-                    </div>
+                    <h3 class="vguide-name">James Omondi</h3>
+                    <p class="vguide-region"><i class="fas fa-map-marker-alt"></i> Nairobi &amp; Central Kenya</p>
+                    <span class="vguide-rating"><i class="fas fa-star"></i> 4.9 · 127 reviews</span>
+                    <div class="vguide-langs"><span>English</span><span>Swahili</span><span>French</span></div>
+                    <a href="guides.html" class="btn btn-primary">Book Guide</a>
                 </div>
-                <div class="guide-card">
-                    <div class="guide-img">
-                        <img src="images/guide-amina.jpg" alt="Guide Amina">
+                <div class="vguide-card">
+                    <div class="vguide-avatar-wrap">
+                        <img class="vguide-avatar" src="images/guide-amina.svg" alt="Amina Hassan" onerror="this.src='images/user-avatar.svg'">
+                        <span class="vguide-verified" title="Verified guide"><i class="fas fa-check"></i></span>
                     </div>
-                    <div class="guide-content">
-                        <h3>Amina Hassan</h3>
-                        <p class="guide-location">Mombasa & Coastal Region</p>
-                        <p class="guide-bio">Marine enthusiast, cultural expert, and passionate about coastal traditions.</p>
-                        <div class="guide-meta">
-                            <span><i class="fas fa-star"></i> 4.8 (93 reviews)</span>
-                            <span><i class="fas fa-language"></i> English, Swahili, Arabic</span>
-                        </div>
-                        <a href="#" class="btn btn-outline">View Profile</a>
-                    </div>
+                    <h3 class="vguide-name">Amina Hassan</h3>
+                    <p class="vguide-region"><i class="fas fa-map-marker-alt"></i> Mombasa &amp; Coastal Region</p>
+                    <span class="vguide-rating"><i class="fas fa-star"></i> 4.8 · 93 reviews</span>
+                    <div class="vguide-langs"><span>English</span><span>Swahili</span><span>Arabic</span></div>
+                    <a href="guides.html" class="btn btn-primary">Book Guide</a>
                 </div>
-                <div class="guide-card">
-                    <div class="guide-img">
-                        <img src="images/guide-daniel.jpg" alt="Guide Daniel">
+                <div class="vguide-card">
+                    <div class="vguide-avatar-wrap">
+                        <img class="vguide-avatar" src="images/guide-daniel.svg" alt="Daniel Kipchoge" onerror="this.src='images/user-avatar.svg'">
+                        <span class="vguide-verified" title="Verified guide"><i class="fas fa-check"></i></span>
                     </div>
-                    <div class="guide-content">
-                        <h3>Daniel Kipchoge</h3>
-                        <p class="guide-location">Rift Valley & Western Kenya</p>
-                        <p class="guide-bio">Adventure specialist, wildlife expert, and community conservation advocate.</p>
-                        <div class="guide-meta">
-                            <span><i class="fas fa-star"></i> 5.0 (78 reviews)</span>
-                            <span><i class="fas fa-language"></i> English, Swahili, Kalenjin</span>
-                        </div>
-                        <a href="#" class="btn btn-outline">View Profile</a>
-                    </div>
+                    <h3 class="vguide-name">Daniel Kipchoge</h3>
+                    <p class="vguide-region"><i class="fas fa-map-marker-alt"></i> Maasai Mara &amp; Rift Valley</p>
+                    <span class="vguide-rating"><i class="fas fa-star"></i> 5.0 · 78 reviews</span>
+                    <div class="vguide-langs"><span>English</span><span>Swahili</span><span>Maa</span></div>
+                    <a href="guides.html" class="btn btn-primary">Book Guide</a>
                 </div>
             </div>
-            <div class="view-all">
-                <a href="guides.html" class="btn btn-primary">View All Guides</a>
+            <div class="view-all" style="text-align:center;margin-top:2.5rem;">
+                <a href="guides.html" class="btn btn-outline">View All Guides</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="payment-trust">
+        <div class="container">
+            <h3>Pay Your Way — Locally &amp; Internationally</h3>
+            <p>Secure, transparent payments trusted by Kenyan and international travelers alike.</p>
+            <div class="pay-badges">
+                <span class="pay-badge mpesa"><i class="fas fa-mobile-alt"></i> Lipa na M-Pesa</span>
+                <span class="pay-badge visa"><i class="fab fa-cc-visa"></i> Visa</span>
+                <span class="pay-badge mc"><i class="fab fa-cc-mastercard"></i> Mastercard</span>
+                <span class="pay-badge paypal"><i class="fab fa-cc-paypal"></i> PayPal</span>
+                <span class="pay-badge card"><i class="fas fa-lock"></i> 256-bit Secure</span>
             </div>
         </div>
     </section>
@@ -372,7 +407,7 @@
                         <p>"My guide James showed me a side of Nairobi I never would have discovered on my own. From hidden food spots to local music venues, it was the highlight of my trip to Kenya."</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/testimonial-1.jpg" alt="Sarah from USA">
+                        <img src="images/testimonial-1.svg" alt="Sarah from USA">
                         <div>
                             <h4>Sarah Thompson</h4>
                             <p>USA</p>
@@ -384,7 +419,7 @@
                         <p>"The home cooking experience with a local family in Kisumu was incredible. I learned so much about Kenyan culture through food, and the family was so welcoming. A truly authentic experience!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/testimonial-2.jpg" alt="Marco from Italy">
+                        <img src="images/testimonial-2.svg" alt="Marco from Italy">
                         <div>
                             <h4>Marco Rossi</h4>
                             <p>Italy</p>
@@ -396,7 +431,7 @@
                         <p>"Our guide took us to a local festival that wasn't advertised anywhere for tourists. We were the only foreigners there and everyone made us feel so welcome. This is what travel should be about!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/testimonial-3.jpg" alt="Yuki from Japan">
+                        <img src="images/testimonial-3.svg" alt="Yuki from Japan">
                         <div>
                             <h4>Yuki Tanaka</h4>
                             <p>Japan</p>
@@ -472,6 +507,7 @@
 
     <script src="js/api.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/landing.js"></script>
     <!-- WhatsApp Button -->
     <a href="https://wa.me/254724023338?text=Hello%20Elite%20Tours,%20I%20need%20assistance%20with%20" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>

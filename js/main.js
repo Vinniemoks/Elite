@@ -152,6 +152,10 @@ function updateAllPrices() {
 
 // Enhanced Search Functionality
 function initializeSearch() {
+    // The landing page uses the advanced tabbed search widget (landing.js);
+    // skip the basic handler there to avoid double navigation.
+    if (document.querySelector('.search-tabs')) return;
+
     const searchInput = document.querySelector('.search-container input');
     const searchButton = document.querySelector('.search-container button');
     const searchSelect = document.querySelector('.search-container select');
