@@ -5,10 +5,18 @@
 (function () {
     'use strict';
 
-    // API base URL: local development talks to the Express backend on :5001;
-    // in production the API is served from the same domain under /api.
+    // API base URL resolution:
+    // 1. window.ELITE_API_URL, if a page sets it before loading this script
+    //    (use this when the API lives on a subdomain, e.g.
+    //    <script>window.ELITE_API_URL = 'https://api.elitetours.co.ke/api'</script>)
+    // 2. localhost -> local Express backend on :5001
+    // 3. otherwise the api. subdomain of the current domain
     const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
-    const API_BASE_URL = isLocal ? 'http://localhost:5001/api' : '/api';
+    const API_BASE_URL =
+        window.ELITE_API_URL ||
+        (isLocal
+            ? 'http://localhost:5001/api'
+            : `https://api.${window.location.hostname.replace(/^www\./, '')}/api`);
 
     const TOKEN_KEY = 'elite_access_token';
     const REFRESH_KEY = 'elite_refresh_token';

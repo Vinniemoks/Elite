@@ -1,0 +1,31 @@
+name: Site Live Check
+
+on:
+  # Run after each Pages deploy finishes
+  workflow_run:
+    workflows: ["Deploy to GitHub Pages"]
+    types: [completed]
+  workflow_dispatch:
+  schedule:
+    # Every 30 minutes while stabilizing; relax to '0 */6 * * *' later
+    - cron: '*/30 * * * *'
+
+jobs:
+  verify-live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check site is live
+        run: node tools/check-live.js --wait 10
+        env:
+          SITE_URL: https://elitetours.co.ke
+          API_URL: https://api.elitetours.co.ke
+          # The backend API is not hosted yet. Set to 'false' once
+          # api.elitetours.co.ke is deployed so API health is verified too.
+          SKIP_API: 'true'
