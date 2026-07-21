@@ -9,3 +9,6 @@ node_modules/
 
 # Claude Code local session config
 .claude/
+
+# Legacy duplicate of the site (do not track)
+/Elite/
