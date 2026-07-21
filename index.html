@@ -44,6 +44,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/executive.css">
+    <link rel="stylesheet" href="css/showcase.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <!-- Structured Data for SEO -->
@@ -442,13 +443,38 @@
         </div>
     </section>
 
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Experience the Real Kenya?</h2>
-                <p>Sign up today and start planning your authentic Kenyan adventure with local guides.</p>
-                <a href="signup.html" class="btn btn-primary">Get Started</a>
-            </div>
+    <!-- Immersive photo showcase (photo-ready: drop the .jpg files in to replace the scene fallbacks) -->
+    <section class="cta-immersive">
+        <div class="cta-inner">
+            <h2>Ready to Experience the Real Kenya?</h2>
+            <p>Sign up today and start planning your authentic Kenyan adventure with verified local guides.</p>
+            <a href="signup.html" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <section class="guide-band photo-band" aria-label="Featured guide">
+        <div class="band-label">
+            <small>Featured Local Guide</small>
+            James Omondi
+        </div>
+    </section>
+
+    <div class="mosaic">
+        <a class="mosaic-tile tile-culture" href="experiences.html?category=cultural">
+            <span class="tile-label"><i class="fas fa-utensils"></i> Culture</span>
+        </a>
+        <a class="mosaic-tile tile-hiddengem" href="experiences.html?category=adventure">
+            <span class="tile-label"><i class="fas fa-mountain"></i> Hidden Gem</span>
+        </a>
+        <a class="mosaic-tile tile-nightlife" href="experiences.html?category=nightlife">
+            <span class="tile-label"><i class="fas fa-martini-glass"></i> Nightlife</span>
+        </a>
+    </div>
+
+    <section class="beach-band photo-band" aria-label="Explore Diani Beach">
+        <div class="band-label">
+            Explore Diani Beach
+            <div><a href="experiences.html?category=beaches">Discover the coast</a></div>
         </div>
     </section>
 
