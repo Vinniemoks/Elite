@@ -12,3 +12,8 @@ node_modules/
 
 # Legacy duplicate of the site (do not track)
 /Elite/
+
+# Original full-size photo uploads (optimized web copies committed instead)
+images/Gemini_Generated_Image_*.png
+images/*.jpeg
+images/diani-1.jpg

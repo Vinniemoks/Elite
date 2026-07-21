@@ -238,7 +238,7 @@ img {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(20, 20, 40, 0.25), rgba(20, 20, 40, 0.35)), url('../images/scene-hero.svg') no-repeat center center/cover;
+    background: linear-gradient(rgba(20, 20, 40, 0.25), rgba(20, 20, 40, 0.35)), url('../images/scene-hero.jpg') no-repeat center center/cover;
     color: white;
     display: flex;
     align-items: center;

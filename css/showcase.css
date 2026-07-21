@@ -19,12 +19,8 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    background:
-        url('../images/cta-lions.jpg'),
-        url('../images/scene-maasai-mara.svg');
-    background-repeat: no-repeat;
-    background-position: right center, right center;
-    background-size: cover, cover;
+    background: url('../images/cta-lions.jpg') no-repeat right center;
+    background-size: cover;
 }
 /* Gradient veil: opaque teal/obsidian on the left, fading into the photo */
 .cta-immersive::before {
@@ -110,12 +106,8 @@
     min-height: 340px;
     align-items: center;
     justify-content: flex-end;
-    background:
-        url('../images/guide-feature.jpg'),
-        url('../images/scene-hero.svg');
-    background-repeat: no-repeat;
-    background-position: center 30%, center;
-    background-size: cover, cover;
+    background: url('../images/guide-feature.jpg') no-repeat center 30%;
+    background-size: cover;
 }
 .guide-band::after {
     background: linear-gradient(90deg, rgba(11,19,43,0.15) 0%, rgba(11,19,43,0) 45%, rgba(11,19,43,0.35) 100%);
@@ -180,9 +172,9 @@
 }
 .mosaic-tile .tile-label i { font-size: 1.1rem; color: var(--sc-green); }
 
-.tile-culture   { background-image: url('../images/tile-culture.jpg'),    url('../images/local-cooking.svg'); background-size: cover, cover; }
-.tile-hiddengem { background-image: url('../images/tile-hidden-gem.jpg'), url('../images/hidden-waterfall.svg'); background-size: cover, cover; }
-.tile-nightlife { background-image: url('../images/tile-nightlife.jpg'),  url('../images/nairobi-night.svg'); background-size: cover, cover; }
+.tile-wildlife  { background-image: url('../images/tile-wildlife.jpg'); }
+.tile-coast     { background-image: url('../images/tile-coast.jpg'); }
+.tile-nightlife { background-image: url('../images/tile-nightlife.jpg'); }
 
 /* ---- Diani beach band --------------------------------------------- */
 .beach-band {
@@ -190,12 +182,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background:
-        url('../images/band-diani.jpg'),
-        url('../images/scene-diani.svg');
-    background-repeat: no-repeat;
-    background-position: center 60%, center;
-    background-size: cover, cover;
+    background: url('../images/band-diani.jpg') no-repeat center 60%;
+    background-size: cover;
 }
 .beach-band::after {
     background: linear-gradient(180deg, rgba(11,19,43,0.2) 0%, rgba(11,19,43,0.05) 50%, rgba(11,19,43,0.3) 100%);

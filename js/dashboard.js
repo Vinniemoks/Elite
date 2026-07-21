@@ -84,7 +84,7 @@ function renderBookings(bookings) {
         return `
         <div class="booking-card">
             <div class="booking-img">
-                <img src="${exp.images && exp.images[0] ? esc(exp.images[0]) : 'images/scene-maasai-mara.svg'}" alt="${esc(exp.title || 'Experience')}">
+                <img src="${exp.images && exp.images[0] ? esc(exp.images[0]) : 'images/scene-maasai-mara.jpg'}" alt="${esc(exp.title || 'Experience')}">
             </div>
             <div class="booking-content">
                 <h3>${esc(exp.title || 'Experience')}</h3>

@@ -97,10 +97,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Pick a realistic scene image matching the experience when it has no photos
     function sceneFor(exp) {
         const text = `${exp.category} ${exp.location} ${exp.title}`.toLowerCase();
-        if (/(mara|safari|wildlife|game)/.test(text)) return 'images/scene-maasai-mara.svg';
-        if (/(beach|diani|coast|dhow|mombasa|lamu)/.test(text)) return 'images/scene-diani.svg';
-        if (/(amboseli|kilimanjaro|mountain|photo)/.test(text)) return 'images/scene-amboseli.svg';
-        return 'images/scene-hero.svg';
+        if (/(mara|safari|wildlife|game)/.test(text)) return 'images/scene-maasai-mara.jpg';
+        if (/(beach|diani|coast|dhow|mombasa|lamu)/.test(text)) return 'images/scene-diani.jpg';
+        if (/(amboseli|kilimanjaro|mountain|photo)/.test(text)) return 'images/scene-amboseli.jpg';
+        return 'images/scene-hero.jpg';
     }
 
     function capitalize(value) {

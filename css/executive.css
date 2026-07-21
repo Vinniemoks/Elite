@@ -113,11 +113,9 @@ body {
     position: relative;
     height: 100vh;
     min-height: 640px;
-    /* Photo first, SVG scene as automatic fallback if the .jpg is absent */
     background:
         linear-gradient(135deg, rgba(11, 19, 43, 0.82) 0%, rgba(28, 37, 65, 0.62) 55%, rgba(11, 19, 43, 0.72) 100%),
-        url('../images/scene-hero.jpg'),
-        url('../images/scene-hero.svg');
+        url('../images/scene-hero.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

@@ -218,10 +218,10 @@ function initSearchWidget() {
 
     function sceneFor(x) {
         const t = `${x.category} ${x.location} ${x.title}`.toLowerCase();
-        if (/(mara|safari|wildlife|game)/.test(t)) return 'images/scene-maasai-mara.svg';
-        if (/(beach|diani|coast|dhow|mombasa|lamu)/.test(t)) return 'images/scene-diani.svg';
-        if (/(amboseli|kilimanjaro|mountain|photo)/.test(t)) return 'images/scene-amboseli.svg';
-        return 'images/scene-hero.svg';
+        if (/(mara|safari|wildlife|game)/.test(t)) return 'images/scene-maasai-mara.jpg';
+        if (/(beach|diani|coast|dhow|mombasa|lamu)/.test(t)) return 'images/scene-diani.jpg';
+        if (/(amboseli|kilimanjaro|mountain|photo)/.test(t)) return 'images/scene-amboseli.jpg';
+        return 'images/scene-hero.jpg';
     }
     function cap(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : ''; }
 }
