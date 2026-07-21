@@ -39,3 +39,25 @@ Claude Code can regenerate these automatically via the `imagen` skill once a
 
 Keep each file under ~500 KB (compress with squoosh.app or `magick -quality 80`)
 so the pages stay fast on safari-lodge Wi-Fi.
+
+---
+
+## Landing-page immersive showcase (added for the collage look)
+
+Drop these into `images/` with these EXACT names and the bands auto-upgrade
+from the SVG scene fallbacks to real photos (16:9 or wider, ≥1600px wide):
+
+- `cta-lions.jpg` — two lions (male + lioness) standing on the savanna at
+  golden hour, Maasai Mara. Used in the "Ready to Experience the Real Kenya?" CTA.
+- `guide-feature.jpg` — a smiling Kenyan safari guide (fleece/branded top) in
+  a busy Nairobi street or market scene. Used in the featured-guide band.
+- `tile-culture.jpg` — a Kenyan family cooking traditional food together over
+  a jiko, welcoming visitors. Culture tile.
+- `tile-hidden-gem.jpg` — hikers at a lush forest waterfall (e.g. Karura /
+  Aberdares). Hidden Gem tile.
+- `tile-nightlife.jpg` — young people toasting drinks at a warm, softly-lit
+  Nairobi rooftop bar. Nightlife tile.
+- `band-diani.jpg` — Diani Beach at sunset with a traditional dhow on
+  turquoise water and palms. Diani band.
+
+Compress each under ~500 KB (squoosh.app or `magick in.jpg -quality 80 out.jpg`).
