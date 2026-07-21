@@ -1,13 +1,15 @@
 name: Site Live Check
 
+# Verifies elitetours.co.ke is actually serving the site after each push.
+# GitHub Pages deploys the site from the main branch (Pages > Build and
+# deployment > Deploy from a branch), so this job just confirms the result.
+
 on:
-  # Run after each Pages deploy finishes
-  workflow_run:
-    workflows: ["Deploy to GitHub Pages"]
-    types: [completed]
+  push:
+    branches: [main]
   workflow_dispatch:
   schedule:
-    # Every 30 minutes while stabilizing; relax to '0 */6 * * *' later
+    # Every 30 minutes as a safety net; relax to '0 */6 * * *' once stable.
     - cron: '*/30 * * * *'
 
 jobs:
@@ -21,6 +23,8 @@ jobs:
         with:
           node-version: '20'
 
+      # Pages usually publishes within a couple of minutes of a push, so
+      # poll for up to 10 minutes before declaring the site down.
       - name: Check site is live
         run: node tools/check-live.js --wait 10
         env:
